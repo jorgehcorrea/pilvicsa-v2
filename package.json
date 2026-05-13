@@ -1,0 +1,31 @@
+{
+  "name": "pilvicsa",
+  "version": "2.0.0",
+  "description": "Pilvicsa website rebuild",
+  "scripts": {
+    "build": "npx @tailwindcss/cli -i src/input.css -o dist/css/style.css --minify",
+    "watch": "npx @tailwindcss/cli -i src/input.css -o dist/css/style.css --watch",
+    "optimize": "node scripts/optimize_images.js",
+    "fetch": "python scripts/fetch_sheet.py"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jorgehcorrea/pilvicsa-v2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jorgehcorrea/pilvicsa-v2/issues"
+  },
+  "homepage": "https://github.com/jorgehcorrea/pilvicsa-v2#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.0",
+    "flowbite": "^4.0.2",
+    "tailwindcss": "^4.3.0"
+  },
+  "dependencies": {
+    "sharp": "^0.34.5"
+  }
+}
