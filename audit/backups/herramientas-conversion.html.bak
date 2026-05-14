@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es-EC" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversión de Unidades | Herramientas Pilvicsa</title>
+  <meta name="description" content="Convierte unidades agrícolas: área, peso, volumen y longitud. Descarga como imagen para el celular. Pilvicsa.">
+  <link rel="canonical" href="https://pilvicsa.com.ec/herramientas-conversion.html">
+  <link rel="icon" href="images/pilvicsa.ico" type="image/x-icon">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Pilvicsa">
+  <meta property="og:title" content="Conversión de Unidades | Pilvicsa">
+  <meta property="og:image" content="https://pilvicsa.com.ec/images/logo@2x.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dist/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css">
+  <style>
+    #main-navbar { background-color: #fff; box-shadow: 0 1px 8px rgba(0,0,0,0.07); }
+    body { background: #eef2f7; }
+    .tool-wrap { max-width: 860px; margin: 0 auto; padding: 0 16px 60px; }
+    .pilv-section-label { display:flex;align-items:center;gap:12px;margin:36px 0 20px; }
+    .pilv-section-label span { font-size:.65rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#2e5fa3;white-space:nowrap; }
+    .pilv-section-label::before,.pilv-section-label::after { content:'';flex:1;height:1px;background:#d0ddf5; }
+    .pilv-calc { background:#fff;border-radius:12px;border:1px solid #dde8dd;overflow:hidden;margin-bottom:32px;box-shadow:0 2px 16px rgba(44,110,63,0.07); }
+    .pilv-calc-header { background:#1a4a28;padding:18px 24px;display:flex;align-items:center;gap:12px;color:#fff; }
+    .pilv-calc-header .icon { font-size:1.8rem;line-height:1; }
+    .pilv-calc-header h2 { font-size:1.1rem;font-weight:700;margin:0 0 2px; }
+    .pilv-calc-header p { font-size:.8rem;opacity:.75;margin:0; }
+    .pilv-calc-body { padding:24px; }
+    .pilv-field { margin-bottom:16px; }
+    .pilv-field label { display:block;font-size:.82rem;font-weight:600;color:#333;margin-bottom:6px; }
+    .pilv-field input,.pilv-field select { width:100%;padding:10px 12px;border:1.5px solid #dde8dd;border-radius:8px;font-size:.9rem;font-family:inherit;background:#fafdfa;transition:border-color .15s; }
+    .pilv-field input:focus,.pilv-field select:focus { outline:none;border-color:#2c6e3f; }
+    .pilv-row-2 { display:grid;grid-template-columns:1fr 1fr;gap:16px; }
+    @media(max-width:600px){ .pilv-row-2 { grid-template-columns:1fr; } }
+    .pilv-btn { display:inline-block;padding:11px 24px;background:#2c6e3f;color:#fff;border:none;border-radius:8px;font-size:.88rem;font-weight:700;cursor:pointer;font-family:inherit;transition:background .15s; }
+    .pilv-btn:hover { background:#1a4a28; }
+    .pilv-result { background:#d0ddf5;border-left:4px solid #2e5fa3;border-radius:0 10px 10px 0;padding:16px 20px;margin-top:16px; }
+    .pilv-result .result-title { font-size:.65rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#2e5fa3;margin-bottom:12px; }
+    .pilv-result-item { background:#fff;border-radius:8px;padding:12px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.06); }
+    .pilv-result-item .val { font-size:1.4rem;font-weight:800;color:#1a4a28;line-height:1.2; }
+    .pilv-result-item .unit { font-size:.72rem;color:#888;margin-top:2px; }
+    .pilv-btn-ics { display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:#fff;color:#1a73e8;border:1.5px solid #1a73e8;border-radius:8px;font-size:.83rem;font-weight:700;cursor:pointer;font-family:inherit;text-decoration:none;transition:background .15s;margin-top:14px; }
+    .pilv-btn-ics:hover { background:#e8f0fe; }
+    .tool-nav-pills { display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px; }
+    .tool-nav-pills a { padding:8px 16px;border-radius:99px;font-size:.78rem;font-weight:700;text-decoration:none;border:1.5px solid #c0cfe0;color:#2e5fa3;background:#fff;transition:all .15s; }
+    .tool-nav-pills a.active,.tool-nav-pills a:hover { background:#2e5fa3;color:#fff;border-color:#2e5fa3; }
+  </style>
+</head>
+<body class="font-sans text-gray-900">
+
+<!-- NAVBAR -->
+<nav id="main-navbar" class="fixed top-0 left-0 right-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-3 flex-shrink-0">
+        <img src="images/logo@2x.png" alt="Pilvicsa" class="h-9 w-auto">
+      </a>
+      <div class="hidden lg:flex items-center gap-1">
+        <a href="index.html" class="px-3 py-2 text-sm font-semibold text-pilvicsa-primary hover:text-pilvicsa-accent transition">Inicio</a>
+        <div class="relative group">
+          <button class="px-3 py-2 text-sm font-semibold text-pilvicsa-primary hover:text-pilvicsa-accent transition inline-flex items-center gap-1">Servicios <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
+            <a href="index.html#servicios" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Semillas</a>
+            <a href="index.html#servicios" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Esquejes</a>
+            <a href="index.html#servicios" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Injertos</a>
+            <a href="index.html#servicios" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Endurecimiento</a>
+          </div>
+        </div>
+        <div class="relative group">
+          <button class="px-3 py-2 text-sm font-semibold text-pilvicsa-primary hover:text-pilvicsa-accent transition inline-flex items-center gap-1">Productos <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
+            <a href="producto-hortalizas.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Hortalizas</a>
+            <a href="productos-florescorte.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Flores de Corte</a>
+            <a href="productos-cultivoscosta.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Cultivos de Costa</a>
+            <a href="productos-frutalesforestales.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Frutales y Forestales</a>
+            <a href="productos-especies.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Especies y Aromáticas</a>
+            <a href="productos-otras.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Cultivos Especiales</a>
+          </div>
+        </div>
+        <a href="buscar.html" class="px-3 py-2 text-sm font-semibold text-pilvicsa-primary hover:text-pilvicsa-accent transition">Buscar</a>
+        <div class="relative group">
+          <button class="px-3 py-2 text-sm font-semibold text-pilvicsa-accent border-b-2 border-pilvicsa-accent inline-flex items-center gap-1">Herramientas <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
+            <a href="herramientas-planificacion.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">📋 Planificación</a>
+            <a href="herramientas-cuidado.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">🌿 Cuidado del Cultivo</a>
+            <a href="herramientas-conversion.html" class="block px-4 py-2.5 text-sm bg-pilvicsa-surface text-pilvicsa-primary font-semibold">📐 Conversión de Unidades</a>
+          </div>
+        </div>
+        <a href="localizaciones.html" class="px-3 py-2 text-sm font-semibold text-pilvicsa-primary hover:text-pilvicsa-accent transition">Contacto</a>
+      </div>
+      <a href="buscar.html" class="hidden lg:inline-flex items-center gap-2 bg-pilvicsa-accent text-pilvicsa-dark px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-pilvicsa-light hover:text-white transition">Explorar Variedades <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+      <button data-collapse-toggle="mobile-menu-conv" type="button" class="lg:hidden p-2 rounded-lg text-pilvicsa-primary hover:bg-pilvicsa-surface transition" aria-controls="mobile-menu-conv" aria-expanded="false">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu-conv" class="hidden lg:hidden bg-white border-t border-gray-100 shadow-sm">
+    <div class="px-4 py-3 space-y-1">
+      <a href="index.html" class="block px-3 py-2 text-sm font-semibold text-pilvicsa-primary">Inicio</a>
+      <a href="buscar.html" class="block px-3 py-2 text-sm font-semibold text-pilvicsa-primary">Buscar</a>
+      <a href="herramientas-planificacion.html" class="block px-3 py-2 text-sm font-semibold text-pilvicsa-primary">Planificación</a>
+      <a href="herramientas-cuidado.html" class="block px-3 py-2 text-sm font-semibold text-pilvicsa-primary">Cuidado del Cultivo</a>
+      <a href="herramientas-conversion.html" class="block px-3 py-2 text-sm font-semibold text-pilvicsa-accent">Conversión de Unidades</a>
+      <a href="localizaciones.html" class="block px-3 py-2 text-sm font-semibold text-pilvicsa-primary">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="bg-pilvicsa-dark pt-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <nav class="text-xs text-white/40 mb-4" aria-label="Breadcrumb">
+      <a href="index.html" class="hover:text-white/70 transition">Inicio</a>
+      <span class="mx-2">/</span>
+      <a href="herramientas-planificacion.html" class="hover:text-white/70 transition">Herramientas</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/70">Conversión de Unidades</span>
+    </nav>
+    <h1 class="font-display font-black text-3xl lg:text-4xl text-white mb-2">📐 Conversión de Unidades</h1>
+    <p class="text-white/50 text-sm max-w-lg">Área, peso, volumen y longitud — convierte unidades del campo al laboratorio y descarga como imagen.</p>
+    <div class="tool-nav-pills mt-6">
+      <a href="herramientas-planificacion.html">📋 Planificación</a>
+      <a href="herramientas-cuidado.html">🌿 Cuidado del Cultivo</a>
+      <a href="herramientas-conversion.html" class="active">📐 Conversión de Unidades</a>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="tool-wrap pt-8">
+
+  <div class="pilv-section-label"><span>Referencia — Conversión de Unidades</span></div>
+
+  <div class="pilv-calc">
+    <div class="pilv-calc-header">
+      <div class="icon">📐</div>
+      <div>
+        <h2>Conversión de Unidades Agrícolas</h2>
+        <p>Área, peso, volumen y longitud — unidades del campo al laboratorio. Haz clic en un resultado para verlo en grande.</p>
+      </div>
+    </div>
+    <div class="pilv-calc-body">
+      <div class="pilv-row-2">
+        <div class="pilv-field">
+          <label>Categoría</label>
+          <select id="conv-cat" onchange="updateConvUnits()">
+            <option value="area">Área</option>
+            <option value="peso">Peso / Masa</option>
+            <option value="volumen">Volumen</option>
+            <option value="longitud">Longitud</option>
+          </select>
+        </div>
+        <div class="pilv-field">
+          <label>Unidad de origen</label>
+          <select id="conv-from" onchange="calcConversion()"></select>
+        </div>
+      </div>
+      <div class="pilv-row-2">
+        <div class="pilv-field">
+          <label>Cantidad a convertir</label>
+          <input type="number" id="conv-value" placeholder="ej. 1" min="0" step="any" oninput="calcConversion()">
+        </div>
+        <div class="pilv-field">
+          <label>Unidad de destino <span style="font-weight:400;color:#999;">(opcional — muestra todas si vacío)</span></label>
+          <select id="conv-to" onchange="calcConversion()">
+            <option value="">— Mostrar todas —</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="pilv-result" style="display:block;margin-top:0;">
+        <div class="result-title">Equivalencias</div>
+        <div id="conv-result-grid"></div>
+      </div>
+
+      <div style="margin-top:16px;">
+        <button class="pilv-btn" onclick="downloadConvImage()">📱 Descargar como imagen</button>
+        <canvas id="conv-card-canvas" style="display:none;"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;padding:20px 0 40px;font-size:.78rem;color:#888;line-height:1.7;">
+    Las calculadoras son herramientas de referencia. Consulte siempre con un agrónomo certificado<br>
+    antes de aplicar productos o realizar cambios en su planificación de cultivo.<br>
+    <a href="localizaciones.html" style="color:#2e5fa3;font-weight:600;">Contactar a un asesor Pilvicsa →</a>
+  </div>
+
+</div><!-- /tool-wrap -->
+
+<!-- FOOTER -->
+<footer class="bg-pilvicsa-dark text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
+      <div><a href="index.html" class="flex items-center gap-3 mb-4"><img src="images/logo@2x.png" alt="Pilvicsa" class="h-10 w-auto"></a><p class="text-white/40 text-sm leading-relaxed">Germinando desde 1999.<br>Vivero y pilonera líder del Ecuador.</p></div>
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-widest text-pilvicsa-accent mb-4">Herramientas</h4>
+        <ul class="space-y-2 text-sm text-white/55">
+          <li><a href="herramientas-planificacion.html" class="hover:text-white transition">Planificación</a></li>
+          <li><a href="herramientas-cuidado.html" class="hover:text-white transition">Cuidado del Cultivo</a></li>
+          <li><a href="herramientas-conversion.html" class="text-pilvicsa-accent/80">Conversión de Unidades</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-widest text-pilvicsa-accent mb-4">Productos</h4>
+        <ul class="space-y-2 text-sm text-white/55">
+          <li><a href="producto-hortalizas.html" class="hover:text-white transition">Hortalizas</a></li>
+          <li><a href="productos-florescorte.html" class="hover:text-white transition">Flores de Corte</a></li>
+          <li><a href="productos-frutalesforestales.html" class="hover:text-white transition">Frutales y Forestales</a></li>
+          <li><a href="buscar.html" class="text-pilvicsa-accent/70 hover:text-pilvicsa-accent transition">Ver todas →</a></li>
+        </ul>
+      </div>
+      <div><h4 class="text-xs font-bold uppercase tracking-widest text-pilvicsa-accent mb-4">Contacto Rápido</h4><ul class="space-y-2.5 text-sm text-white/55 mb-5"><li><a href="tel:+593322235011" class="hover:text-white transition">032 235 011</a></li><li><a href="mailto:pilvicsaec@gmail.com" class="hover:text-white transition">pilvicsaec@gmail.com</a></li></ul><a href="https://wa.me/593997609747" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded-lg text-xs font-semibold transition">WhatsApp</a></div>
+    </div>
+    <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-white/35 text-sm">© 2025 Pilvicsa · <a href="https://pilvicsa.com.ec" class="hover:text-white/55 transition">pilvicsa.com.ec</a></p>
+      <div class="flex gap-6 text-sm text-white/35"><a href="sitemap.xml" class="hover:text-white/55 transition">Sitemap</a><a href="localizaciones.html" class="hover:text-white/55 transition">Contacto</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+<script>
+var CONV_DATA = {
+	area: {
+		units: ['Hectárea (ha)', 'Metro cuadrado (m²)', 'Cuadra ecuatoriana', 'Acre', 'Kilómetro cuadrado (km²)'],
+		keys:  ['ha', 'm2', 'cuadra', 'acre', 'km2'],
+		toBase: { ha:1, m2:0.0001, cuadra:0.7, acre:0.404686, km2:100 },
+		fmt: ['4','0','2','4','4']
+	},
+	peso: {
+		units: ['Kilogramo (kg)', 'Gramo (g)', 'Quintal (qq)', 'Libra (lb)', 'Tonelada métrica (t)', 'Miligramo (mg)'],
+		keys:  ['kg','g','qq','lb','t','mg'],
+		toBase: { kg:1, g:0.001, qq:45.3592, lb:0.453592, t:1000, mg:0.000001 },
+		fmt: ['3','0','4','4','4','0']
+	},
+	volumen: {
+		units: ['Litro (L)', 'Mililitro (ml)', 'Galón (gal)', 'Metro cúbico (m³)', 'Centímetro cúbico (cc)'],
+		keys:  ['L','ml','gal','m3','cc'],
+		toBase: { L:1, ml:0.001, gal:3.78541, m3:1000, cc:0.001 },
+		fmt: ['3','0','3','3','0']
+	},
+	longitud: {
+		units: ['Metro (m)', 'Centímetro (cm)', 'Kilómetro (km)', 'Vara (vara)', 'Pulgada (in)', 'Pie (ft)'],
+		keys:  ['m','cm','km','vara','in','ft'],
+		toBase: { m:1, cm:0.01, km:1000, vara:0.836, in:0.0254, ft:0.3048 },
+		fmt: ['4','2','6','4','4','4']
+	}
+};
+
+function updateConvUnits() {
+	var cat  = document.getElementById('conv-cat').value;
+	var data = CONV_DATA[cat];
+	var selFrom = document.getElementById('conv-from');
+	var selTo   = document.getElementById('conv-to');
+	var opts = data.units.map(function(u, i) {
+		return '<option value="' + data.keys[i] + '">' + u + '</option>';
+	}).join('');
+	selFrom.innerHTML = opts;
+	selTo.innerHTML   = '<option value="">— Mostrar todas —</option>' + opts;
+	calcConversion();
+}
+
+function calcConversion() {
+	var cat   = document.getElementById('conv-cat').value;
+	var val   = parseFloat(document.getElementById('conv-value').value);
+	var from  = document.getElementById('conv-from').value;
+	var toSel = document.getElementById('conv-to');
+	var toKey = toSel ? toSel.value : '';
+	var data  = CONV_DATA[cat];
+	var grid  = document.getElementById('conv-result-grid');
+	if (!val && val !== 0) { grid.innerHTML = '<p style="color:#999;font-size:.85rem;">Ingresa un valor para ver las equivalencias.</p>'; return; }
+	if (!from) { grid.innerHTML = '<p style="color:#999;font-size:.85rem;">Selecciona la unidad de origen.</p>'; return; }
+	var inBase = val * data.toBase[from];
+	if (toKey && toKey !== from) {
+		var result = inBase / data.toBase[toKey];
+		var idx    = data.keys.indexOf(toKey);
+		var dp     = parseInt(data.fmt[idx]);
+		var disp   = result < 0.001 ? result.toExponential(2) : result.toLocaleString('es-EC', {minimumFractionDigits:0,maximumFractionDigits:dp});
+		var fromLabel = data.units[data.keys.indexOf(from)];
+		var toLabel   = data.units[idx];
+		grid.innerHTML = '<div style="text-align:center;padding:20px 0;">'
+			+ '<div style="font-size:.75rem;color:#888;margin-bottom:6px;">' + val.toLocaleString('es-EC') + ' ' + fromLabel + ' equivale a</div>'
+			+ '<div style="font-size:2.4rem;font-weight:800;color:#1a4a28;letter-spacing:-1px;">' + disp + '</div>'
+			+ '<div style="font-size:1rem;color:#555;margin-top:4px;">' + toLabel + '</div>'
+			+ '<div style="margin-top:16px;font-size:.72rem;color:#aaa;">También: <a href="#" onclick="document.getElementById(\'conv-to\').value=\'\';calcConversion();return false;" style="color:#2e5fa3;">ver todas las equivalencias</a></div>'
+			+ '</div>';
+		return;
+	}
+	var html = '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:10px;">';
+	data.keys.forEach(function(key, i) {
+		if (key === from) return;
+		var result = inBase / data.toBase[key];
+		var dp     = parseInt(data.fmt[i]);
+		var disp   = result < 0.001 ? result.toExponential(2) : result.toLocaleString('es-EC', {minimumFractionDigits:0,maximumFractionDigits:dp});
+		html += '<div class="pilv-result-item" style="cursor:pointer;" onclick="document.getElementById(\'conv-to\').value=\''+key+'\';calcConversion();">'
+			+ '<div class="val" style="font-size:1.2rem;">' + disp + '</div>'
+			+ '<div class="unit">' + data.units[i] + '</div>'
+			+ '</div>';
+	});
+	html += '</div><div style="font-size:.72rem;color:#aaa;margin-top:8px;text-align:center;">Haz clic en un resultado para verlo en grande</div>';
+	grid.innerHTML = html;
+}
+
+function downloadConvImage() {
+	var cat  = document.getElementById('conv-cat').value;
+	var val  = parseFloat(document.getElementById('conv-value').value);
+	var from = document.getElementById('conv-from').value;
+	var data = CONV_DATA[cat];
+	if (!val && val !== 0) { alert('Ingresa un valor primero.'); return; }
+	var fromLabel = data.units[data.keys.indexOf(from)];
+	var inBase    = val * data.toBase[from];
+	var lines = [];
+	data.keys.forEach(function(key, i) {
+		if (key === from) return;
+		var result = inBase / data.toBase[key];
+		var dp     = parseInt(data.fmt[i]);
+		var disp   = result < 0.001 ? result.toExponential(2) : result.toLocaleString('es-EC', {minimumFractionDigits:0,maximumFractionDigits:dp});
+		lines.push({ val: disp, unit: data.units[i] });
+	});
+	var W = 540, rowH = 52, padT = 130, padB = 60;
+	var H = padT + lines.length * rowH + padB;
+	var canvas = document.getElementById('conv-card-canvas');
+	canvas.width = W; canvas.height = H;
+	var ctx = canvas.getContext('2d');
+	ctx.fillStyle = '#f4f9f5'; ctx.fillRect(0,0,W,H);
+	ctx.fillStyle = '#2c6e3f'; ctx.fillRect(0,0,W,100);
+	ctx.fillStyle = '#fff'; ctx.font = 'bold 22px sans-serif'; ctx.textAlign = 'center';
+	ctx.fillText('Pilvicsa — Conversión de Unidades', W/2, 38);
+	ctx.font = '15px sans-serif'; ctx.fillStyle = 'rgba(255,255,255,0.85)';
+	ctx.fillText(val.toLocaleString('es-EC') + ' ' + fromLabel + ' equivale a:', W/2, 68);
+	ctx.font = '12px sans-serif'; ctx.fillStyle = 'rgba(255,255,255,0.6)';
+	ctx.fillText('pilvicsa.com.ec', W/2, 90);
+	lines.forEach(function(line, i) {
+		var y = padT + i * rowH;
+		ctx.fillStyle = i % 2 === 0 ? '#fff' : '#f0f7f0';
+		ctx.fillRect(20, y, W-40, rowH-4);
+		ctx.fillStyle = '#1a4a28'; ctx.font = 'bold 18px sans-serif'; ctx.textAlign = 'left';
+		ctx.fillText(line.val, 36, y+31);
+		ctx.fillStyle = '#666'; ctx.font = '13px sans-serif'; ctx.textAlign = 'right';
+		ctx.fillText(line.unit, W-36, y+31);
+	});
+	ctx.fillStyle = '#aaa'; ctx.font = '11px sans-serif'; ctx.textAlign = 'center';
+	ctx.fillText('Generado por Pilvicsa · ' + new Date().toLocaleDateString('es-EC'), W/2, H-20);
+	var link = document.createElement('a');
+	link.download = 'conversion-pilvicsa.png';
+	link.href = canvas.toDataURL('image/png');
+	link.click();
+}
+
+window.addEventListener('DOMContentLoaded', function() {
+	updateConvUnits();
+	calcConversion();
+});
+</script>
+</body>
+</html>

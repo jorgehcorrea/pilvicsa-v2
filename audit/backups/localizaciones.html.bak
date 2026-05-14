@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es-EC" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contactos y Localizaciones | Pilvicsa — Vivero y Pilonera Ecuador</title>
+  <meta name="description" content="Encuéntranos en nuestros viveros y puntos de despacho: Latacunga, Santo Domingo, Quito, Checa y Otavalo. Teléfono: 032 235 011.">
+  <link rel="canonical" href="https://pilvicsa.com.ec/localizaciones.html">
+  <link rel="icon" href="images/pilvicsa.ico" type="image/x-icon">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Pilvicsa">
+  <meta property="og:title" content="Contactos y Localizaciones | Pilvicsa">
+  <meta property="og:description" content="Viveros y puntos de despacho en Latacunga, Santo Domingo, Quito, Checa y Otavalo.">
+  <meta property="og:image" content="https://pilvicsa.com.ec/images/logo@2x.png">
+  <meta property="og:url" content="https://pilvicsa.com.ec/localizaciones.html">
+  <meta property="og:locale" content="es_EC">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contactos y Localizaciones | Pilvicsa">
+  <meta name="twitter:description" content="Viveros y puntos de despacho en todo el Ecuador.">
+  <meta name="twitter:image" content="https://pilvicsa.com.ec/images/logo@2x.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dist/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css">
+  <style>
+    #main-navbar { background-color: #fff; box-shadow: 0 1px 8px rgba(0,0,0,0.07); }
+    .loc-card { scroll-margin-top: 80px; }
+  </style>
+</head>
+<body class="font-sans text-gray-900 bg-gray-50">
+
+<!-- NAVBAR -->
+<nav id="main-navbar" class="fixed top-0 left-0 right-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-3 flex-shrink-0">
+        <img src="images/logo@2x.png" alt="Pilvicsa" class="h-9 w-auto">
+      </a>
+      <div class="hidden lg:flex items-center gap-1">
+        <a href="index.html" class="px-3 py-2 text-sm font-semibold text-pilvicsa-primary hover:text-pilvicsa-accent transition">Inicio</a>
+        <div class="relative group">
+          <button class="px-3 py-2 text-sm font-semibold text-pilvicsa-primary hover:text-pilvicsa-accent transition inline-flex items-center gap-1">Servicios <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
+            <a href="index.html#servicios" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Semillas</a>
+            <a href="index.html#servicios" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Esquejes</a>
+            <a href="index.html#servicios" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Injertos</a>
+            <a href="index.html#servicios" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Endurecimiento</a>
+          </div>
+        </div>
+        <div class="relative group">
+          <button class="px-3 py-2 text-sm font-semibold text-pilvicsa-primary hover:text-pilvicsa-accent transition inline-flex items-center gap-1">Productos <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
+            <a href="producto-hortalizas.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Hortalizas</a>
+            <a href="productos-florescorte.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Flores de Corte</a>
+            <a href="productos-cultivoscosta.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Cultivos de Costa</a>
+            <a href="productos-frutalesforestales.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Frutales y Forestales</a>
+            <a href="productos-especies.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Especies y Aromáticas</a>
+            <a href="productos-otras.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Cultivos Especiales</a>
+          </div>
+        </div>
+        <a href="buscar.html" class="px-3 py-2 text-sm font-semibold text-pilvicsa-primary hover:text-pilvicsa-accent transition">Buscar</a>
+        <div class="relative group">
+          <button class="px-3 py-2 text-sm font-semibold text-pilvicsa-primary hover:text-pilvicsa-accent transition inline-flex items-center gap-1">Herramientas <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
+            <a href="herramientas-planificacion.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Planificación</a>
+            <a href="herramientas-cuidado.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Cuidado del Cultivo</a>
+            <a href="herramientas-conversion.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Conversión de Unidades</a>
+          </div>
+        </div>
+        <a href="localizaciones.html" class="px-3 py-2 text-sm font-semibold text-pilvicsa-accent border-b-2 border-pilvicsa-accent">Contacto</a>
+      </div>
+      <a href="buscar.html" class="hidden lg:inline-flex items-center gap-2 bg-pilvicsa-accent text-pilvicsa-dark px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-pilvicsa-light hover:text-white transition">
+        Explorar Variedades <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </a>
+      <button data-collapse-toggle="mobile-menu-loc" type="button" class="lg:hidden p-2 rounded-lg text-pilvicsa-primary hover:bg-pilvicsa-surface transition" aria-controls="mobile-menu-loc" aria-expanded="false">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu-loc" class="hidden lg:hidden bg-white border-t border-gray-100 shadow-sm">
+    <div class="px-4 py-3 space-y-1">
+      <a href="index.html" class="block px-3 py-2 text-sm font-semibold text-pilvicsa-primary">Inicio</a>
+      <a href="buscar.html" class="block px-3 py-2 text-sm font-semibold text-pilvicsa-primary">Buscar</a>
+      <a href="localizaciones.html" class="block px-3 py-2 text-sm font-semibold text-pilvicsa-accent">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="bg-pilvicsa-dark pt-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <nav class="text-xs text-white/40 mb-4" aria-label="Breadcrumb">
+      <a href="index.html" class="hover:text-white/70 transition">Inicio</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/70">Contactos y Localizaciones</span>
+    </nav>
+    <h1 class="font-display font-black text-4xl lg:text-5xl text-white mb-3">Contactos y Localizaciones</h1>
+    <p class="text-white/50 text-base max-w-xl">5 puntos de atención en todo el Ecuador — viveros y despachos.</p>
+  </div>
+</div>
+
+<!-- CONTACT INFO BAR -->
+<div class="bg-pilvicsa-primary">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+    <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-white/80">
+      <a href="tel:+593322235011" class="inline-flex items-center gap-2 hover:text-white transition">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        032 235 011
+      </a>
+      <a href="tel:+593997609747" class="inline-flex items-center gap-2 hover:text-white transition">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        0997 609 747
+      </a>
+      <a href="mailto:pilvicsaec@gmail.com" class="inline-flex items-center gap-2 hover:text-white transition">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        pilvicsaec@gmail.com
+      </a>
+      <a href="https://wa.me/593997609747" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-400 text-white px-4 py-1.5 rounded-lg font-semibold transition">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- LOCATION ANCHOR PILLS -->
+<div class="bg-white border-b border-gray-200 sticky top-16 z-30">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap gap-2">
+    <a href="#latacunga" class="inline-flex items-center gap-1.5 px-4 py-1.5 border border-pilvicsa-light text-pilvicsa-primary rounded-full text-xs font-semibold hover:bg-pilvicsa-primary hover:text-white hover:border-pilvicsa-primary transition">
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      Vivero Latacunga
+    </a>
+    <a href="#santodomingo" class="inline-flex items-center gap-1.5 px-4 py-1.5 border border-pilvicsa-light text-pilvicsa-primary rounded-full text-xs font-semibold hover:bg-pilvicsa-primary hover:text-white hover:border-pilvicsa-primary transition">
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      Vivero Santo Domingo
+    </a>
+    <a href="#quito" class="inline-flex items-center gap-1.5 px-4 py-1.5 border border-pilvicsa-light text-pilvicsa-primary rounded-full text-xs font-semibold hover:bg-pilvicsa-primary hover:text-white hover:border-pilvicsa-primary transition">
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      Despacho Quito
+    </a>
+    <a href="#checa" class="inline-flex items-center gap-1.5 px-4 py-1.5 border border-pilvicsa-light text-pilvicsa-primary rounded-full text-xs font-semibold hover:bg-pilvicsa-primary hover:text-white hover:border-pilvicsa-primary transition">
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      Despacho Checa
+    </a>
+    <a href="#otavalo" class="inline-flex items-center gap-1.5 px-4 py-1.5 border border-pilvicsa-light text-pilvicsa-primary rounded-full text-xs font-semibold hover:bg-pilvicsa-primary hover:text-white hover:border-pilvicsa-primary transition">
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      Despacho Otavalo
+    </a>
+  </div>
+</div>
+
+<!-- LOCATION CARDS -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+    <!-- Vivero Latacunga -->
+    <div id="latacunga" class="loc-card bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+      <div class="bg-pilvicsa-primary px-6 py-4 flex items-center justify-between">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-widest text-pilvicsa-accent mb-0.5">Vivero · Planta Principal</p>
+          <h2 class="font-display font-black text-xl text-white">Latacunga</h2>
+        </div>
+        <span class="text-2xl">🏭</span>
+      </div>
+      <div class="aspect-video">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3745.295662341903!2d-78.59984142533406!3d-0.7878320352838438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d45911005fde99%3A0x9635d5f9b20e8296!2sPilones%20la%20Victoria%20S.A.%20-%20Pilvicsa%20S.A.!5e1!3m2!1sen!2sec!4v1775846843377!5m2!1sen!2sec"
+          class="w-full h-full" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Vivero Latacunga"></iframe>
+      </div>
+      <div class="px-6 py-5">
+        <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm mb-4">
+          <a href="tel:+593997609747" class="inline-flex items-center gap-1.5 text-pilvicsa-primary hover:text-pilvicsa-mid transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            0997 609 747
+          </a>
+          <a href="tel:+593322235011" class="inline-flex items-center gap-1.5 text-pilvicsa-primary hover:text-pilvicsa-mid transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            032 235 011
+          </a>
+          <a href="mailto:pilvicsa1@pilvicsa.com" class="inline-flex items-center gap-1.5 text-pilvicsa-primary hover:text-pilvicsa-mid transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            pilvicsa1@pilvicsa.com
+          </a>
+        </div>
+        <p class="text-xs text-gray-400">Lu–Vi 8:30–16:30 (almuerzo 12:30–13:30) · Coordinar despacho previamente</p>
+      </div>
+    </div>
+
+    <!-- Vivero Santo Domingo -->
+    <div id="santodomingo" class="loc-card bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+      <div class="bg-pilvicsa-primary px-6 py-4 flex items-center justify-between">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-widest text-pilvicsa-accent mb-0.5">Vivero · Costa</p>
+          <h2 class="font-display font-black text-xl text-white">Santo Domingo</h2>
+        </div>
+        <span class="text-2xl">🌿</span>
+      </div>
+      <div class="aspect-video">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119860.30433590991!2d-79.26066564230663!3d-0.16344722150415247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d551fbf9e80609%3A0xac858047a638bdc5!2sSustratos%20Poal%C3%B3%20s.a%2C%20filial%20de%20Pilvicsa!5e1!3m2!1ses!2sec!4v1775847183347!5m2!1ses!2sec"
+          class="w-full h-full" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Vivero Santo Domingo"></iframe>
+      </div>
+      <div class="px-6 py-5">
+        <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm mb-4">
+          <a href="https://wa.me/593994907234" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-green-700 hover:text-green-600 transition">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            0994 907 234
+          </a>
+          <a href="mailto:pilvicsa1@pilvicsa.com" class="inline-flex items-center gap-1.5 text-pilvicsa-primary hover:text-pilvicsa-mid transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            pilvicsa1@pilvicsa.com
+          </a>
+        </div>
+        <p class="text-xs text-gray-400">Lu–Vi 8:30–16:30 (almuerzo 12:30–13:30) · Coordinar despacho previamente</p>
+      </div>
+    </div>
+
+    <!-- Despacho Quito -->
+    <div id="quito" class="loc-card bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+      <div class="bg-pilvicsa-mid px-6 py-4 flex items-center justify-between">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-widest text-pilvicsa-accent mb-0.5">Despacho · Punto de entrega</p>
+          <h2 class="font-display font-black text-xl text-white">Quito</h2>
+        </div>
+        <span class="text-2xl">📦</span>
+      </div>
+      <div class="aspect-video">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d354426.7962170639!2d-78.77244837500001!3d-0.1955637999999831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59baaef9d9e47%3A0xd9ccf426dd72ee9e!2sPilvicsa%20Quito!5e1!3m2!1sen!2sec!4v1773179148707!5m2!1sen!2sec"
+          class="w-full h-full" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Despacho Quito"></iframe>
+      </div>
+      <div class="px-6 py-5">
+        <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm mb-4">
+          <a href="https://wa.me/593997829193" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-green-700 hover:text-green-600 transition">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            0997 829 193
+          </a>
+          <a href="mailto:pilvicsa1@pilvicsa.com" class="inline-flex items-center gap-1.5 text-pilvicsa-primary hover:text-pilvicsa-mid transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            pilvicsa1@pilvicsa.com
+          </a>
+        </div>
+        <p class="text-xs text-gray-400">Lu–Vi 8:30–16:30 (almuerzo 12:30–13:30) · Coordinar despacho previamente</p>
+      </div>
+    </div>
+
+    <!-- Despacho Checa -->
+    <div id="checa" class="loc-card bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+      <div class="bg-pilvicsa-mid px-6 py-4 flex items-center justify-between">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-widest text-pilvicsa-accent mb-0.5">Despacho · Punto de entrega</p>
+          <h2 class="font-display font-black text-xl text-white">Checa</h2>
+        </div>
+        <span class="text-2xl">📦</span>
+      </div>
+      <div class="aspect-video">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5537.936498300275!2d-78.31343602376323!3d-0.13089419986780187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d58d3f61b890ab%3A0x95e81911de5aaea3!2sPilvicsa%20Checa!5e1!3m2!1sen!2sec!4v1773179163945!5m2!1sen!2sec"
+          class="w-full h-full" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Despacho Checa"></iframe>
+      </div>
+      <div class="px-6 py-5">
+        <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm mb-4">
+          <a href="https://wa.me/593997612631" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-green-700 hover:text-green-600 transition">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            0997 612 631
+          </a>
+          <a href="mailto:pilvicsa1@pilvicsa.com" class="inline-flex items-center gap-1.5 text-pilvicsa-primary hover:text-pilvicsa-mid transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            pilvicsa1@pilvicsa.com
+          </a>
+        </div>
+        <p class="text-xs text-gray-400">Lu–Vi 8:30–16:30 (almuerzo 12:30–13:30) · Coordinar despacho previamente</p>
+      </div>
+    </div>
+
+    <!-- Despacho Otavalo — centered on last row -->
+    <div id="otavalo" class="loc-card bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden lg:col-span-2 lg:max-w-2xl lg:mx-auto lg:w-full">
+      <div class="bg-pilvicsa-mid px-6 py-4 flex items-center justify-between">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-widest text-pilvicsa-accent mb-0.5">Despacho · Punto de entrega</p>
+          <h2 class="font-display font-black text-xl text-white">Otavalo / Natabuela</h2>
+        </div>
+        <span class="text-2xl">📦</span>
+      </div>
+      <div class="aspect-video">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5537.85541996404!2d-78.19420612376312!3d0.3365373996601631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e2a3dfc5c919617%3A0x7d1c91b354fbd928!2sPilvicsa%20Natabuela%20(Antes%20Pilvicsa%20Otavalo)!5e1!3m2!1sen!2sec!4v1773179184885!5m2!1sen!2sec"
+          class="w-full h-full" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Despacho Otavalo"></iframe>
+      </div>
+      <div class="px-6 py-5">
+        <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm mb-4">
+          <a href="https://wa.me/593997340362" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-green-700 hover:text-green-600 transition">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            0997 340 362
+          </a>
+          <a href="mailto:pilvicsa1@pilvicsa.com" class="inline-flex items-center gap-1.5 text-pilvicsa-primary hover:text-pilvicsa-mid transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            pilvicsa1@pilvicsa.com
+          </a>
+        </div>
+        <p class="text-xs text-gray-400">Lu–Vi 8:30–16:30 (almuerzo 12:30–13:30) · Coordinar despacho previamente</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- PHONE DIRECTORY + HOURS -->
+<div class="bg-white border-t border-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+      <!-- Extension table -->
+      <div>
+        <p class="text-xs font-bold uppercase tracking-widest text-pilvicsa-accent mb-1">Matriz Latacunga · 032 235 011</p>
+        <h2 class="font-display font-black text-2xl text-pilvicsa-primary mb-6">Directorio de Extensiones</h2>
+        <div class="rounded-xl border border-gray-100 overflow-hidden">
+          <table class="w-full text-sm">
+            <tbody>
+              <tr class="bg-pilvicsa-surface"><td class="px-4 py-3 font-bold text-pilvicsa-primary w-16 font-mono">101</td><td class="px-4 py-3 text-gray-600">Facturación / Atención al Cliente</td></tr>
+              <tr class="bg-white"><td class="px-4 py-3 font-bold text-pilvicsa-primary font-mono border-t border-gray-50">102</td><td class="px-4 py-3 text-gray-600 border-t border-gray-50">Administración</td></tr>
+              <tr class="bg-pilvicsa-surface"><td class="px-4 py-3 font-bold text-pilvicsa-primary font-mono border-t border-gray-50">103</td><td class="px-4 py-3 text-gray-600 border-t border-gray-50">Asistente Contabilidad</td></tr>
+              <tr class="bg-white"><td class="px-4 py-3 font-bold text-pilvicsa-primary font-mono border-t border-gray-50">104</td><td class="px-4 py-3 text-gray-600 border-t border-gray-50">Contabilidad</td></tr>
+              <tr class="bg-pilvicsa-surface"><td class="px-4 py-3 font-bold text-pilvicsa-primary font-mono border-t border-gray-50">105</td><td class="px-4 py-3 text-gray-600 border-t border-gray-50">Asistente Contabilidad 2</td></tr>
+              <tr class="bg-white"><td class="px-4 py-3 text-gray-400 font-mono border-t border-gray-50">106</td><td class="px-4 py-3 text-gray-400 border-t border-gray-50">Producción</td></tr>
+              <tr class="bg-pilvicsa-surface"><td class="px-4 py-3 font-bold text-pilvicsa-primary font-mono border-t border-gray-50">107</td><td class="px-4 py-3 text-gray-600 border-t border-gray-50">Bodega Agroquímicos</td></tr>
+              <tr class="bg-white"><td class="px-4 py-3 text-gray-400 font-mono border-t border-gray-50">108</td><td class="px-4 py-3 text-gray-400 border-t border-gray-50">Gerencia General</td></tr>
+              <tr class="bg-white"><td class="px-4 py-3 text-gray-400 font-mono border-t border-gray-50">109</td><td class="px-4 py-3 text-gray-400 border-t border-gray-50">Presidencia</td></tr>
+              <tr class="bg-pilvicsa-surface"><td class="px-4 py-3 font-bold text-pilvicsa-primary font-mono border-t border-gray-50">110</td><td class="px-4 py-3 text-gray-600 border-t border-gray-50">Garita</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Business hours -->
+      <div>
+        <p class="text-xs font-bold uppercase tracking-widest text-pilvicsa-accent mb-1">Sede Latacunga</p>
+        <h2 class="font-display font-black text-2xl text-pilvicsa-primary mb-6">Horarios de Atención</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          <div class="bg-gray-50 rounded-xl p-4 border border-gray-100">
+            <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">Lunes</p>
+            <p class="text-sm text-gray-400 italic">Despacho de pedidos</p>
+          </div>
+          <div class="bg-white rounded-xl p-4 border border-pilvicsa-light/50">
+            <p class="text-xs font-bold uppercase tracking-wider text-pilvicsa-primary mb-1">Martes</p>
+            <p class="text-sm text-gray-700">8:30 – 12:00</p>
+            <p class="text-sm text-gray-700">13:00 – 16:30</p>
+          </div>
+          <div class="bg-white rounded-xl p-4 border border-pilvicsa-light/50">
+            <p class="text-xs font-bold uppercase tracking-wider text-pilvicsa-primary mb-1">Miércoles</p>
+            <p class="text-sm text-gray-700">8:30 – 12:00</p>
+            <p class="text-sm text-gray-700">13:00 – 16:30</p>
+          </div>
+          <div class="bg-white rounded-xl p-4 border border-pilvicsa-light/50">
+            <p class="text-xs font-bold uppercase tracking-wider text-pilvicsa-primary mb-1">Jueves</p>
+            <p class="text-sm text-gray-700">8:30 – 12:00</p>
+            <p class="text-sm text-gray-700">13:00 – 16:30</p>
+          </div>
+          <div class="bg-white rounded-xl p-4 border border-pilvicsa-light/50">
+            <p class="text-xs font-bold uppercase tracking-wider text-pilvicsa-primary mb-1">Viernes</p>
+            <p class="text-sm text-gray-700">8:30 – 12:00</p>
+            <p class="text-sm text-gray-700">13:00 – 16:30</p>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-4 border border-gray-100">
+            <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">Sábado</p>
+            <p class="text-sm text-gray-400 italic">Cerrado</p>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-4 border border-gray-100 sm:col-span-3">
+            <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">Domingo</p>
+            <p class="text-sm text-gray-400 italic">Cerrado</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FAQ PLACEHOLDER -->
+<div class="bg-pilvicsa-surface border-t border-gray-200">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-14 text-center">
+    <p class="text-xs font-bold uppercase tracking-widest text-pilvicsa-accent mb-2">Preguntas Frecuentes</p>
+    <h2 class="font-display font-black text-3xl text-pilvicsa-primary mb-4">¿Tienes más preguntas?</h2>
+    <p class="text-gray-500 text-base mb-8">Estamos disponibles por WhatsApp y correo para resolver cualquier consulta sobre pedidos, plántulas, disponibilidad y envíos.</p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="https://wa.me/593997609747" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white px-6 py-3 rounded-xl text-sm font-semibold transition">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Escribir por WhatsApp
+      </a>
+      <a href="mailto:pilvicsaec@gmail.com" class="inline-flex items-center gap-2 bg-pilvicsa-primary hover:bg-pilvicsa-mid text-white px-6 py-3 rounded-xl text-sm font-semibold transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        Enviar correo
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-pilvicsa-dark text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
+      <div><a href="index.html" class="flex items-center gap-3 mb-4"><img src="images/logo@2x.png" alt="Pilvicsa" class="h-10 w-auto"></a><p class="text-white/40 text-sm leading-relaxed">Germinando desde 1999.<br>Vivero y pilonera líder del Ecuador.</p></div>
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-widest text-pilvicsa-accent mb-4">Localizaciones</h4>
+        <ul class="space-y-2 text-sm text-white/55">
+          <li><a href="localizaciones.html#latacunga" class="hover:text-white transition">Vivero Latacunga</a></li>
+          <li><a href="localizaciones.html#santodomingo" class="hover:text-white transition">Vivero Santo Domingo</a></li>
+          <li><a href="localizaciones.html#quito" class="hover:text-white transition">Despacho Quito</a></li>
+          <li><a href="localizaciones.html#checa" class="hover:text-white transition">Despacho Checa</a></li>
+          <li><a href="localizaciones.html#otavalo" class="hover:text-white transition">Despacho Otavalo</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-widest text-pilvicsa-accent mb-4">Productos</h4>
+        <ul class="space-y-2 text-sm text-white/55">
+          <li><a href="producto-hortalizas.html" class="hover:text-white transition">Hortalizas</a></li>
+          <li><a href="productos-florescorte.html" class="hover:text-white transition">Flores de Corte</a></li>
+          <li><a href="productos-frutalesforestales.html" class="hover:text-white transition">Frutales y Forestales</a></li>
+          <li><a href="buscar.html" class="text-pilvicsa-accent/70 hover:text-pilvicsa-accent transition">Ver todas →</a></li>
+        </ul>
+      </div>
+      <div><h4 class="text-xs font-bold uppercase tracking-widest text-pilvicsa-accent mb-4">Contacto Rápido</h4><ul class="space-y-2.5 text-sm text-white/55 mb-5"><li><a href="tel:+593322235011" class="hover:text-white transition">032 235 011</a></li><li><a href="tel:+593997609747" class="hover:text-white transition">0997 609 747</a></li><li><a href="mailto:pilvicsaec@gmail.com" class="hover:text-white transition">pilvicsaec@gmail.com</a></li></ul><a href="https://wa.me/593997609747" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded-lg text-xs font-semibold transition"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp</a></div>
+    </div>
+    <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-white/35 text-sm">© 2025 Pilvicsa · <a href="https://pilvicsa.com.ec" class="hover:text-white/55 transition">pilvicsa.com.ec</a></p>
+      <div class="flex gap-6 text-sm text-white/35"><a href="sitemap.xml" class="hover:text-white/55 transition">Sitemap</a><a href="localizaciones.html" class="text-white/55">Contacto</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+</body>
+</html>
