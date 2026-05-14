@@ -1,0 +1,5 @@
+node_modules/
+dist/css/style.css
+images/raw/
+*.log
+.DS_Store

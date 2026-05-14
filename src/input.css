@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pilvicsa-dark: #0d1f13;
+  --color-pilvicsa-primary: #1a4d2e;
+  --color-pilvicsa-mid: #2c6e3f;
+  --color-pilvicsa-light: #4a9e5c;
+  --color-pilvicsa-accent: #8bc34a;
+  --color-pilvicsa-surface: #f4f8f5;
+  --font-display: "Syne", sans-serif;
+  --font-sans: "Inter", sans-serif;
+}

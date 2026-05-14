@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Disallow: /data/
+Disallow: /scripts/
+Disallow: /src/
+Disallow: /node_modules/
+
+Sitemap: https://pilvicsa.com.ec/sitemap.xml
