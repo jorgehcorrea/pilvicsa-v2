@@ -1,0 +1,5 @@
+<svg width="140" height="40" xmlns="http://www.w3.org/2000/svg">
+  <text x="70" y="24" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#999" text-anchor="middle" letter-spacing="1">RIJK ZWAAN</text>
+  <line x1="10" y1="28" x2="130" y2="28" stroke="#CCC" stroke-width="1"/>
+  <text x="70" y="38" font-family="Arial, sans-serif" font-size="8" fill="#BBB" text-anchor="middle" letter-spacing="2">SEED COMPANY</text>
+</svg>
