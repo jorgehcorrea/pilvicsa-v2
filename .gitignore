@@ -3,3 +3,4 @@ dist/css/style.css
 images/raw/
 *.log
 .DS_Store
+.claude/

@@ -230,6 +230,8 @@ const SPEC_FIELDS = [
   { key: 'resistencias', label: 'Resistencias' },
 ];
 const PLACEHOLDER_SVG = `<div class="w-full h-full bg-pilvicsa-surface flex items-center justify-center"><svg class="w-10 h-10 text-pilvicsa-light opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></div>`;
+function pilvImgErr(el){el.parentElement.innerHTML=PLACEHOLDER_SVG;}
+
 
 let PILV_DB = [];
 
@@ -240,7 +242,7 @@ function esc(s) {
 function cardHTML(p) {
   const meta = CAT_META[p.pagina] || { label: p.pageLabel || p.pagina, cls: 'bg-gray-100 text-gray-700' };
   const imgHtml = p.imagen
-    ? `<img src="images/productos/${esc(p.imagen)}" alt="${esc(p.nombre)}" loading="lazy" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='${PLACEHOLDER_SVG.replace(/`/g,"'").replace(/\n/g,'')}';">`
+    ? `<img src="images/productos/${esc(p.imagen)}" alt="${esc(p.nombre)}" loading="lazy" class="w-full h-full object-cover" onerror="pilvImgErr(this)">`
     : PLACEHOLDER_SVG;
   const specs = SPEC_FIELDS.filter(f => p[f.key]).slice(0, 3)
     .map(f => `<span class="text-xs text-gray-500"><span class="font-medium text-gray-700">${f.label}:</span> ${esc(p[f.key])}</span>`)
@@ -264,8 +266,12 @@ function cardHTML(p) {
 }
 
 fetch('data/products.json')
-  .then(r => r.json())
+  .then(r => {
+    if (!r.ok) throw new Error('HTTP ' + r.status + ' — ' + r.url);
+    return r.json();
+  })
   .then(data => {
+    console.log('[Pilvicsa] Loaded', data.length, 'products from local JSON');
     PILV_DB = data;
     const filtered = PILV_DB.filter(p => p.pagina === PAGE_CAT);
     document.getElementById('page-count').textContent = `${filtered.length} variedad${filtered.length !== 1 ? 'es' : ''}`;
@@ -277,9 +283,10 @@ fetch('data/products.json')
       grid.innerHTML = filtered.map(cardHTML).join('');
     }
   })
-  .catch(() => {
+  .catch(err => {
+    console.error('[Pilvicsa]', err.message);
     document.getElementById('product-grid').innerHTML =
-      '<div class="col-span-full text-center py-16 text-gray-400 text-sm">No se pudo cargar el catálogo.</div>';
+      `<div class="col-span-full text-center py-16 text-red-400 text-sm font-mono px-4">${err.message}<br><br>Abre el sitio via XAMPP: <strong>http://localhost/pilvicsa.v2/</strong></div>`;
   });
 
 function openModal(id) {

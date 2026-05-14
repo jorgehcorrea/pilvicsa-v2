@@ -286,6 +286,8 @@ const PLACEHOLDER_SVG = `<div class="w-full h-full bg-pilvicsa-surface flex item
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
   </svg>
 </div>`;
+function pilvImgErr(el){el.parentElement.innerHTML=PLACEHOLDER_SVG;}
+
 
 let PILV_DB = [];
 let fuse;
@@ -376,19 +378,36 @@ function initWithData(data) {
   render();
 }
 
+function showLoadError(msg) {
+  console.error('[Pilvicsa]', msg);
+  document.getElementById('product-grid').innerHTML =
+    `<div class="col-span-full text-center py-16 text-red-400 text-sm font-mono px-4">${msg}<br><br>Abre el sitio via XAMPP: <strong>http://localhost/pilvicsa.v2/buscar.html</strong></div>`;
+}
+
 // Try Google Sheet first; fall back to local products.json
 fetch(SHEET_URL)
-  .then(r => { if (!r.ok) throw new Error('sheet'); return r.text(); })
-  .then(text => initWithData(csvToProducts(text)))
-  .catch(() =>
+  .then(r => { if (!r.ok) throw new Error('Sheet HTTP ' + r.status); return r.text(); })
+  .then(text => {
+    const data = csvToProducts(text);
+    console.log('[Pilvicsa] Loaded', data.length, 'products from Google Sheet');
+    if (!data.length) throw new Error('Sheet returned 0 products');
+    initWithData(data);
+  })
+  .catch(sheetErr => {
+    console.warn('[Pilvicsa] Sheet fetch failed:', sheetErr.message, '— trying local JSON');
     fetch('data/products.json')
-      .then(r => r.json())
-      .then(data => initWithData(data))
-      .catch(() => {
-        document.getElementById('product-grid').innerHTML =
-          '<div class="col-span-full text-center py-16 text-gray-400 text-sm">No se pudo cargar el catálogo.</div>';
+      .then(r => {
+        if (!r.ok) throw new Error('JSON HTTP ' + r.status);
+        return r.json();
       })
-  );
+      .then(data => {
+        console.log('[Pilvicsa] Loaded', data.length, 'products from local JSON');
+        initWithData(data);
+      })
+      .catch(jsonErr => {
+        showLoadError('Error: ' + sheetErr.message + ' | ' + jsonErr.message);
+      });
+  });
 
 // ── Render ───────────────────────────────────────────────────────────────────
 function getResults() {
@@ -428,8 +447,7 @@ function cardHTML(p) {
     : '';
   const imgHtml = imgSrc
     ? `<img src="${esc(imgSrc)}" alt="${esc(p.nombre)}" loading="lazy"
-         class="w-full h-full object-cover"
-         onerror="this.parentElement.innerHTML='${PLACEHOLDER_SVG.replace(/`/g,"'").replace(/\n/g,'')}';">`
+         class="w-full h-full object-cover" onerror="pilvImgErr(this)">`
     : PLACEHOLDER_SVG;
   const specs = SPEC_FIELDS.filter(f => p[f.key]).slice(0, 3)
     .map(f => `<span class="text-xs text-gray-500"><span class="font-medium text-gray-700">${f.label}:</span> ${esc(p[f.key])}</span>`)

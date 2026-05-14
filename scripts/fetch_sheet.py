@@ -26,6 +26,7 @@ CORE = ['id','nombre','latin','categoria','pagina','pageLabel','color','forma',
 def fetch():
     r = requests.get(SHEET_CSV_URL, timeout=30)
     r.raise_for_status()
+    r.encoding = 'utf-8'
     reader = csv.DictReader(io.StringIO(r.text))
     products = []
     for row in reader:
