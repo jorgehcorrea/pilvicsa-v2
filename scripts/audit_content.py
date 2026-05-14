@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-# audit_content.py — Pilvicsa v2 content migration pipeline
+# audit_content.py -- Pilvicsa v2 content migration pipeline
 # Usage: python scripts/audit_content.py [scrape|diff|patch]
 import sys, json, re, time, subprocess
 from datetime import datetime
 from pathlib import Path
 
-# ── Paths ──────────────────────────────────────────────────────────────────────
+# -- Paths ----------------------------------------------------------------------
 ROOT       = Path(__file__).parent.parent
 AUDIT_DIR  = ROOT / 'audit'
 LIVE_JSON  = AUDIT_DIR / 'live_content.json'
@@ -17,7 +17,7 @@ BACKUP_DIR = AUDIT_DIR / 'backups'
 for _d in (AUDIT_DIR, BACKUP_DIR):
     _d.mkdir(exist_ok=True)
 
-# ── Live site pages & v2 file map ─────────────────────────────────────────────
+# -- Live site pages & v2 file map ---------------------------------------------
 PAGES = [
     ('index',                        'https://pilvicsa.com.ec/index.html'),
     ('localizaciones',               'https://pilvicsa.com.ec/localizaciones.html'),
@@ -39,7 +39,7 @@ PHONE_RE  = re.compile(r'\+?[\d\s\-]{7,}')
 SOCIAL_RE = re.compile(r'(facebook\.com|instagram\.com|youtube\.com|tiktok\.com|linkedin\.com)', re.I)
 
 
-# ── SHARED: content extractor (works on both live HTML and v2 files) ──────────
+# -- SHARED: content extractor (works on both live HTML and v2 files) ----------
 
 def extract_content(html):
     from bs4 import BeautifulSoup
@@ -81,12 +81,12 @@ def extract_content(html):
         if len(ph.strip()) >= 7
     ))
 
-    # Addresses — tags that mention location keywords
+    # Addresses -- tags that mention location keywords
     addresses = []
     for tag in soup.find_all(['p', 'div', 'address', 'span']):
         txt = tag.get_text(' ', strip=True)
         if re.search(
-            r'(calle|av\.|avenida|\bkm\b|dirección|quito|latacunga|ambato|guayaquil|ecuador)',
+            r'(calle|av\.|avenida|\bkm\b|direccion|quito|latacunga|ambato|guayaquil|ecuador)',
             txt, re.I
         ) and 20 < len(txt) < 300 and txt not in addresses:
             addresses.append(txt)
@@ -136,7 +136,7 @@ def extract_content(html):
     if foot:
         for tag in foot.find_all(['p', 'span', 'div']):
             txt = tag.get_text(strip=True)
-            if '©' in txt or 'copyright' in txt.lower():
+            if '(c)' in txt or 'copyright' in txt.lower():
                 copyright_text = txt
                 break
 
@@ -156,15 +156,15 @@ def extract_content(html):
     }
 
 
-# ── MODE 1 — SCRAPE ───────────────────────────────────────────────────────────
+# -- MODE 1 -- SCRAPE -----------------------------------------------------------
 
 def mode_scrape():
     import requests
-    print('MODE 1 — SCRAPE\n' + '═' * 60)
+    print('MODE 1 -- SCRAPE\n' + '=' * 60)
     results = {}
 
     for key, url in PAGES:
-        print(f'\n→ {url}')
+        print(f'\n-> {url}')
         try:
             r = requests.get(url, timeout=20, headers={'User-Agent': 'PilvicsaAudit/1.0'})
             r.raise_for_status()
@@ -187,22 +187,22 @@ def mode_scrape():
         time.sleep(1.5)
 
     LIVE_JSON.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding='utf-8')
-    print(f'\n✓ Saved → {LIVE_JSON}')
+    print(f'\n[OK] Saved -> {LIVE_JSON}')
 
     # Summary table
-    print('\n' + '─' * 72)
+    print('\n' + '-' * 72)
     print(f'{"PAGE":<38}  {"H":>3}  {"P":>4}  {"PH":>3}  {"MAPS":>4}  {"SOC":>3}')
-    print('─' * 72)
+    print('-' * 72)
     for key, d in results.items():
         if 'error' in d:
             print(f'{key:<38}  ERROR: {d["error"][:28]}')
         else:
             print(f'{key:<38}  {len(d["headings"]):>3}  {len(d["paragraphs"]):>4}'
                   f'  {len(d["phones"]):>3}  {len(d["maps_iframes"]):>4}  {len(d["social_links"]):>3}')
-    print('─' * 72)
+    print('-' * 72)
 
 
-# ── MODE 2 — DIFF ─────────────────────────────────────────────────────────────
+# -- MODE 2 -- DIFF -------------------------------------------------------------
 
 def mode_diff():
     if not LIVE_JSON.exists():
@@ -238,7 +238,7 @@ def mode_diff():
         elif live['meta_desc'] == v2['meta_desc']:
             pk.append('meta_desc matches')
 
-        # Meta title — manual only (SEO impact)
+        # Meta title -- manual only (SEO impact)
         if live['title'] and live['title'] != v2['title']:
             pm.append(f'title differs | live: `{live["title"][:55]}` | v2: `{v2["title"][:55]}`')
         elif live['title'] == v2['title']:
@@ -278,16 +278,16 @@ def mode_diff():
         elif live.get('copyright') and live['copyright'] == v2.get('copyright'):
             pk.append('copyright matches')
 
-        # Nav links — manual (structure may be intentionally different)
+        # Nav links -- manual (structure may be intentionally different)
         live_nav = {a['href']: a['text'] for a in live.get('nav_links', [])}
         v2_nav   = {a['href']: a['text'] for a in v2.get('nav_links', [])}
         for href, txt in live_nav.items():
             if href not in v2_nav:
-                pm.append(f'nav missing link: `{txt}` → `{href}`')
+                pm.append(f'nav missing link: `{txt}` -> `{href}`')
             elif v2_nav[href] != txt:
                 pm.append(f'nav text differs: `{txt}` vs `{v2_nav[href]}`')
 
-        # Paragraphs — auto if >60% word overlap with a v2 paragraph
+        # Paragraphs -- auto if >60% word overlap with a v2 paragraph
         for lp in live.get('paragraphs', []):
             if len(lp) < 50:
                 continue
@@ -304,7 +304,7 @@ def mode_diff():
                 pa.append({'type': 'paragraph', 'page': key, 'file': v2_file,
                            'old': best_vp, 'new': lp})
             elif best_score < 0.3 and len(lp) > 80:
-                pm.append(f'paragraph not in v2: `{lp[:75]}…`')
+                pm.append(f'paragraph not in v2: `{lp[:75]}...`')
 
         auto_patches.extend(pa)
         manual_items.extend({'page': key, 'reason': r} for r in pm)
@@ -312,7 +312,7 @@ def mode_diff():
 
         if pa:
             md_auto.append(section_header + '\n'.join(
-                f'- **{p["type"]}**: `{str(p.get("old",""))[:55]}` → `{str(p.get("new",""))[:55]}`'
+                f'- **{p["type"]}**: `{str(p.get("old",""))[:55]}` -> `{str(p.get("new",""))[:55]}`'
                 for p in pa) + '\n')
         if pm:
             md_manual.append(section_header + '\n'.join(f'- {r}' for r in pm) + '\n')
@@ -342,12 +342,12 @@ def mode_diff():
            + ('\n'.join(md_ok) or '_None_') + '\n')
     DIFF_MD.write_text(md, encoding='utf-8')
 
-    print(f'\n✓ {len(auto_patches)} auto-patchable  |  {len(manual_items)} manual review  |  {len(correct_items)} already correct')
-    print(f'  Report → {DIFF_MD}')
-    print(f'  Data   → {DIFF_JSON}')
+    print(f'\n[OK] {len(auto_patches)} auto-patchable  |  {len(manual_items)} manual review  |  {len(correct_items)} already correct')
+    print(f'  Report -> {DIFF_MD}')
+    print(f'  Data   -> {DIFF_JSON}')
 
 
-# ── MODE 3 — PATCH helpers ────────────────────────────────────────────────────
+# -- MODE 3 -- PATCH helpers ----------------------------------------------------
 
 def _in_protected_zone(html, pos):
     # Reject if inside <section id="hero"> or class="*hero*">
@@ -381,7 +381,7 @@ def _apply_patch(html, patch):
             _fix_desc, html, count=1, flags=re.I
         )
         if new_html != html:
-            return new_html, f'meta_desc: `{patch["old"][:55]}` → `{patch["new"][:55]}`'
+            return new_html, f'meta_desc: `{patch["old"][:55]}` -> `{patch["new"][:55]}`'
 
     elif ptype == 'maps_iframe':
         old, new = patch.get('old', ''), patch.get('new', '')
@@ -395,7 +395,7 @@ def _apply_patch(html, patch):
             if new_html == html:
                 new_html = html.replace(f"href='{old}'", f"href='{new}'", 1)
             if new_html != html:
-                return new_html, f'social/{patch.get("platform","")}: `{old[:55]}` → `{new[:55]}`'
+                return new_html, f'social/{patch.get("platform","")}: `{old[:55]}` -> `{new[:55]}`'
 
     elif ptype == 'copyright':
         old, new = patch.get('old', ''), patch.get('new', '')
@@ -407,12 +407,12 @@ def _apply_patch(html, patch):
         if old and old in html:
             idx = html.find(old)
             if not _in_protected_zone(html, idx):
-                return html.replace(old, new, 1), f'paragraph: `{old[:55]}…`'
+                return html.replace(old, new, 1), f'paragraph: `{old[:55]}...`'
 
     return html, None
 
 
-# ── MODE 3 — PATCH ────────────────────────────────────────────────────────────
+# -- MODE 3 -- PATCH ------------------------------------------------------------
 
 def mode_patch():
     if not DIFF_JSON.exists():
@@ -440,7 +440,7 @@ def mode_patch():
         html = path.read_text(encoding='utf-8')
         bak  = BACKUP_DIR / (v2_file + '.bak')
         bak.write_text(html, encoding='utf-8')
-        print(f'\n→ {v2_file}  [backup: {bak.name}]')
+        print(f'\n-> {v2_file}  [backup: {bak.name}]')
 
         file_log = [f'\n## {v2_file}']
         changed  = False
@@ -448,13 +448,13 @@ def mode_patch():
         for patch in file_patches:
             new_html, note = _apply_patch(html, patch)
             if note:
-                print(f'  ✓ {note}')
+                print(f'  [OK] {note}')
                 file_log.append(f'- {note}')
                 html    = new_html
                 changed = True
                 total_changes += 1
             else:
-                print(f'  – skipped ({patch["type"]}: pattern not matched or in protected zone)')
+                print(f'  - skipped ({patch["type"]}: pattern not matched or in protected zone)')
 
         if changed:
             path.write_text(html, encoding='utf-8')
@@ -462,13 +462,13 @@ def mode_patch():
             log_lines.extend(file_log)
 
     PATCH_LOG.write_text('\n'.join(log_lines), encoding='utf-8')
-    print(f'\n✓ {total_changes} change(s) applied across {len(patched_files)} file(s)')
-    print(f'  Log → {PATCH_LOG}')
+    print(f'\n[OK] {total_changes} change(s) applied across {len(patched_files)} file(s)')
+    print(f'  Log -> {PATCH_LOG}')
 
     if not patched_files:
         return
 
-    print('\nCommitting to dev2…')
+    print('\nCommitting to dev2...')
     try:
         subprocess.run(['git', 'add'] + patched_files, cwd=ROOT, check=True)
         subprocess.run(
@@ -478,12 +478,12 @@ def mode_patch():
             cwd=ROOT, check=True
         )
         subprocess.run(['git', 'push', 'origin', 'dev2'], cwd=ROOT, check=True)
-        print('✓ Pushed to dev2')
+        print('[OK] Pushed to dev2')
     except subprocess.CalledProcessError as e:
         print(f'  git error: {e}')
 
 
-# ── ENTRY POINT ───────────────────────────────────────────────────────────────
+# -- ENTRY POINT ---------------------------------------------------------------
 
 if __name__ == '__main__':
     mode = sys.argv[1].lower() if len(sys.argv) > 1 else ''
