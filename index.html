@@ -151,45 +151,47 @@
 <!-- ═══════════════════════════════════════════════════
      HERO
 ════════════════════════════════════════════════════ -->
-<section id="hero" class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-  <video autoplay muted loop playsinline poster="images/slider/1.jpg" class="absolute inset-0 w-full h-full object-cover z-0">
+<section id="hero" class="relative h-screen min-h-[600px] overflow-hidden">
+  <!-- Video -->
+  <video id="hero-video" autoplay muted loop playsinline poster="images/slider/1.jpg"
+    class="absolute inset-0 w-full h-full object-cover z-0">
     <source src="images/videos/hero.mp4" type="video/mp4">
   </video>
-  <div class="absolute inset-0 bg-black/50 z-10"></div>
-  <div class="relative z-20 text-center text-white px-4 max-w-5xl mx-auto">
-    <p class="hero-eyebrow text-xs sm:text-sm tracking-[0.35em] uppercase font-semibold text-pilvicsa-accent mb-6">PILVICSA · VIVERO Y PILONERA · ECUADOR</p>
-    <h1 class="hero-h1 font-display font-black text-6xl sm:text-7xl lg:text-[6.5rem] leading-[0.95] mb-6">Tecnología<br>Agrícola.</h1>
-    <p class="hero-sub text-lg sm:text-xl font-medium text-white/80 max-w-xl mx-auto mb-10">Germinamos las mejores plántulas del Ecuador desde 1999.</p>
-    <a href="buscar.html" class="hero-cta inline-flex items-center gap-2 bg-pilvicsa-accent text-pilvicsa-dark px-8 py-4 rounded-xl text-base font-bold hover:bg-pilvicsa-light hover:text-white transition">
-      Explorar Variedades <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-    </a>
-  </div>
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 animate-bounce text-white/40">
-    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-  </div>
-</section>
 
-<!-- ═══════════════════════════════════════════════════
-     STATS BAR
-════════════════════════════════════════════════════ -->
-<section id="stats" class="bg-pilvicsa-dark py-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-2 lg:grid-cols-4">
-      <div class="text-center py-8 border-b lg:border-b-0 lg:border-r border-white/10 px-4">
-        <div class="stat-num font-display font-black text-5xl lg:text-6xl text-pilvicsa-accent mb-2" data-target="25" data-suffix="+">0</div>
-        <div class="text-xs font-semibold text-white/50 uppercase tracking-widest">Años</div>
-      </div>
-      <div class="text-center py-8 border-b lg:border-b-0 lg:border-r border-white/10 px-4">
-        <div class="stat-num font-display font-black text-5xl lg:text-6xl text-pilvicsa-accent mb-2" data-target="221" data-suffix="">0</div>
-        <div class="text-xs font-semibold text-white/50 uppercase tracking-widest">Variedades</div>
-      </div>
-      <div class="text-center py-8 lg:border-r border-white/10 px-4">
-        <div class="stat-num font-display font-black text-5xl lg:text-6xl text-pilvicsa-accent mb-2" data-target="2" data-suffix="">0</div>
-        <div class="text-xs font-semibold text-white/50 uppercase tracking-widest">Viveros</div>
-      </div>
-      <div class="text-center py-8 px-4">
-        <div class="stat-num font-display font-black text-5xl lg:text-6xl text-pilvicsa-accent mb-2" data-target="5" data-suffix="">0</div>
-        <div class="text-xs font-semibold text-white/50 uppercase tracking-widest">Zonas de entrega</div>
+  <!-- Gradient overlay: transparent top → dark bottom -->
+  <div class="absolute inset-0 z-10"
+    style="background: linear-gradient(to bottom, transparent 0%, rgba(13,31,19,0.60) 50%, rgba(13,31,19,0.96) 100%)">
+  </div>
+
+  <!-- Text block — GSAP positions at center on load, drifts to bottom -->
+  <div id="hero-text" class="absolute z-20 left-0 right-0 px-6 text-center" style="bottom: 40px">
+    <p class="hero-eyebrow text-xs sm:text-sm tracking-[0.35em] uppercase font-semibold mb-5"
+      style="color:#8bc34a">PILVICSA · VIVERO Y PILONERA · ECUADOR</p>
+    <h1 class="hero-h1 font-display font-black text-5xl sm:text-6xl lg:text-[5.5rem] leading-[0.95] text-white mb-4">
+      Tecnología<br>Agrícola.</h1>
+    <p class="hero-sub text-base sm:text-lg font-medium max-w-xl mx-auto"
+      style="color:rgba(255,255,255,0.75)">Germinamos las mejores plántulas del Ecuador desde 1999.</p>
+
+    <!-- Stats bar -->
+    <div id="hero-stats" class="mt-6 pt-5 max-w-2xl mx-auto"
+      style="border-top: 1px solid rgba(255,255,255,0.15)">
+      <div class="grid grid-cols-4">
+        <div class="text-center px-3">
+          <div class="font-display font-black text-3xl sm:text-4xl text-white leading-none mb-1">25+</div>
+          <div class="text-xs font-semibold uppercase tracking-widest" style="color:#8bc34a">Años</div>
+        </div>
+        <div class="text-center px-3" style="border-left: 1px solid rgba(255,255,255,0.15)">
+          <div class="font-display font-black text-3xl sm:text-4xl text-white leading-none mb-1">221</div>
+          <div class="text-xs font-semibold uppercase tracking-widest" style="color:#8bc34a">Variedades</div>
+        </div>
+        <div class="text-center px-3" style="border-left: 1px solid rgba(255,255,255,0.15)">
+          <div class="font-display font-black text-3xl sm:text-4xl text-white leading-none mb-1">2</div>
+          <div class="text-xs font-semibold uppercase tracking-widest" style="color:#8bc34a">Viveros</div>
+        </div>
+        <div class="text-center px-3" style="border-left: 1px solid rgba(255,255,255,0.15)">
+          <div class="font-display font-black text-3xl sm:text-4xl text-white leading-none mb-1">5</div>
+          <div class="text-xs font-semibold uppercase tracking-widest" style="color:#8bc34a">Zonas</div>
+        </div>
       </div>
     </div>
   </div>
@@ -575,13 +577,24 @@
 <script>
   gsap.registerPlugin(ScrollTrigger);
 
-  // Hero — set initial state then animate in
-  gsap.set(['.hero-eyebrow', '.hero-h1', '.hero-sub', '.hero-cta'], { opacity: 0, y: 30 });
-  gsap.timeline({ delay: 0.2 })
-    .to('.hero-eyebrow', { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' })
-    .to('.hero-h1',      { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }, '-=0.4')
-    .to('.hero-sub',     { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }, '-=0.4')
-    .to('.hero-cta',     { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.3');
+  // Hero — cinematic entrance: start centered, drift to bottom
+  document.addEventListener('DOMContentLoaded', () => {
+    const heroEl = document.getElementById('hero');
+    const textEl = document.getElementById('hero-text');
+    const heroH  = heroEl.offsetHeight;
+    const textH  = textEl.offsetHeight;
+    const startY = -(heroH / 2 - textH / 2 - 40);
+
+    gsap.set(textEl, { y: startY });
+    gsap.set(['.hero-eyebrow', '.hero-h1', '.hero-sub', '#hero-stats'], { opacity: 0, y: 20 });
+
+    gsap.timeline({ delay: 0.15 })
+      .to('.hero-eyebrow', { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' })
+      .to('.hero-h1',      { opacity: 1, y: 0, duration: 0.75, ease: 'power2.out' }, '-=0.35')
+      .to('.hero-sub',     { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.35')
+      .to('#hero-stats',   { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, '-=0.25')
+      .to(textEl,          { y: 0, duration: 1.2, ease: 'power3.inOut' }, '-=0.4');
+  });
 
   // Navbar transparency
   const nav = document.getElementById('main-navbar');
@@ -591,21 +604,6 @@
   }
   window.addEventListener('scroll', syncNav, { passive: true });
   syncNav();
-
-  // Stat counters
-  document.querySelectorAll('.stat-num').forEach(el => {
-    const target = +el.dataset.target;
-    const suffix = el.dataset.suffix || '';
-    ScrollTrigger.create({
-      trigger: el, start: 'top 85%', once: true,
-      onEnter() {
-        gsap.to({ val: 0 }, {
-          val: target, duration: 2, ease: 'power2.out',
-          onUpdate() { el.textContent = Math.round(this.targets()[0].val) + suffix; }
-        });
-      }
-    });
-  });
 
   // Category cards stagger
   gsap.from('.cat-card', {
