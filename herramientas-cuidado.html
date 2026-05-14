@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es-EC" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuidado del Cultivo | Herramientas Pilvicsa</title>
+  <meta name="description" content="Programas de fertilización y fumigación por cultivo, y calculadora de dilución de agroquímicos. Herramientas Pilvicsa.">
+  <link rel="canonical" href="https://pilvicsa.com.ec/herramientas-cuidado.html">
+  <link rel="icon" href="images/pilvicsa.ico" type="image/x-icon">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Pilvicsa">
+  <meta property="og:title" content="Cuidado del Cultivo | Pilvicsa">
+  <meta property="og:image" content="https://pilvicsa.com.ec/images/logo@2x.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dist/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css">
+  <style>
+    #main-navbar { background-color: #fff; box-shadow: 0 1px 8px rgba(0,0,0,0.07); }
+    body { background: #fdf5e8; }
+    .tool-wrap { max-width: 860px; margin: 0 auto; padding: 0 16px 60px; }
+    .pilv-section-label { display:flex;align-items:center;gap:12px;margin:36px 0 20px; }
+    .pilv-section-label span { font-size:.65rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#a05c1a;white-space:nowrap; }
+    .pilv-section-label::before,.pilv-section-label::after { content:'';flex:1;height:1px;background:#f5e0bb; }
+    .pilv-calc { background:#fff;border-radius:12px;border:1px solid #f0dfc0;overflow:hidden;margin-bottom:32px;box-shadow:0 2px 16px rgba(160,92,26,0.07); }
+    .pilv-calc-header { background:#1a4a28;padding:18px 24px;display:flex;align-items:center;gap:12px;color:#fff; }
+    .pilv-calc-header .icon { font-size:1.8rem;line-height:1; }
+    .pilv-calc-header h2 { font-size:1.1rem;font-weight:700;margin:0 0 2px; }
+    .pilv-calc-header p { font-size:.8rem;opacity:.75;margin:0; }
+    .pilv-calc-body { padding:24px; }
+    .pilv-field { margin-bottom:16px; }
+    .pilv-field label { display:block;font-size:.82rem;font-weight:600;color:#333;margin-bottom:6px; }
+    .pilv-field input,.pilv-field select { width:100%;padding:10px 12px;border:1.5px solid #f0dfc0;border-radius:8px;font-size:.9rem;font-family:inherit;background:#fffdf7;transition:border-color .15s; }
+    .pilv-field input:focus,.pilv-field select:focus { outline:none;border-color:#a05c1a; }
+    .pilv-row-2 { display:grid;grid-template-columns:1fr 1fr;gap:16px; }
+    .pilv-row-3 { display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px; }
+    @media(max-width:600px){ .pilv-row-2,.pilv-row-3 { grid-template-columns:1fr; } }
+    .pilv-btn { display:inline-block;padding:11px 24px;background:#a05c1a;color:#fff;border:none;border-radius:8px;font-size:.88rem;font-weight:700;cursor:pointer;font-family:inherit;transition:background .15s; }
+    .pilv-btn:hover { background:#7a4410; }
+    .pilv-btn-secondary { display:inline-block;padding:11px 20px;background:#fff;color:#555;border:1.5px solid #ccc;border-radius:8px;font-size:.88rem;font-weight:600;cursor:pointer;font-family:inherit;margin-left:10px;transition:background .15s; }
+    .pilv-btn-secondary:hover { background:#f5f5f5; }
+    .pilv-result { background:#f5e0bb;border-left:4px solid #a05c1a;border-radius:0 10px 10px 0;padding:16px 20px;margin-top:16px;display:none; }
+    .pilv-result.show { display:block; }
+    .pilv-result .result-title { font-size:.65rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#a05c1a;margin-bottom:12px; }
+    .pilv-result-note { font-size:.82rem;color:#444;margin-top:12px;line-height:1.6; }
+    .hint { font-size:.72rem;color:#999;margin-top:4px; }
+    .pilv-btn-ics { display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:#fff;color:#1a73e8;border:1.5px solid #1a73e8;border-radius:8px;font-size:.83rem;font-weight:700;cursor:pointer;font-family:inherit;text-decoration:none;transition:background .15s;margin-top:14px; }
+    .pilv-btn-ics:hover { background:#e8f0fe; }
+    .pilv-cal-export { margin-top:20px;padding:18px 20px;background:#f0f6ff;border-left:4px solid #1a73e8;border-radius:0 8px 8px 0; }
+    .pilv-cal-export .export-title { font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#1a73e8;margin-bottom:8px; }
+    .pilv-cal-export p { font-size:.82rem;color:#555;margin:0 0 12px;line-height:1.5; }
+    .pilv-export-btns { display:flex;gap:10px;flex-wrap:wrap;align-items:center; }
+    .pilv-calendar-result { display:none; }
+    .pilv-calendar-result.show { display:block; }
+    .pilv-dil-table { width:100%;border-collapse:collapse;margin-top:16px;font-size:.88rem; }
+    .pilv-dil-table th { background:#a05c1a;color:#fff;padding:9px 14px;text-align:left;font-weight:600;font-size:.78rem;letter-spacing:.05em;text-transform:uppercase; }
+    .pilv-dil-table td { padding:10px 14px;border-bottom:1px solid #f5e8d0;color:#333; }
+    .pilv-dil-table tr:last-child td { border-bottom:none; }
+    .pilv-dil-table tr:nth-child(even) td { background:#fffdf7; }
+    .pilv-dil-table td strong { color:#7a4410;font-size:1rem; }
+    .tool-nav-pills { display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px; }
+    .tool-nav-pills a { padding:8px 16px;border-radius:99px;font-size:.78rem;font-weight:700;text-decoration:none;border:1.5px solid rgba(255,255,255,0.4);color:rgba(255,255,255,0.8);background:rgba(255,255,255,0.1);transition:all .15s; }
+    .tool-nav-pills a.active,.tool-nav-pills a:hover { background:rgba(255,255,255,0.25);border-color:rgba(255,255,255,0.7);color:#fff; }
+  </style>
+</head>
+<body class="font-sans text-gray-900">
+
+<!-- NAVBAR -->
+<nav id="main-navbar" class="fixed top-0 left-0 right-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-3 flex-shrink-0">
+        <img src="images/logo@2x.png" alt="Pilvicsa" class="h-9 w-auto">
+      </a>
+      <div class="hidden lg:flex items-center gap-1">
+        <a href="index.html" class="px-3 py-2 text-sm font-semibold text-pilvicsa-primary hover:text-pilvicsa-accent transition">Inicio</a>
+        <div class="relative group">
+          <button class="px-3 py-2 text-sm font-semibold text-pilvicsa-primary hover:text-pilvicsa-accent transition inline-flex items-center gap-1">Servicios <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
+            <a href="index.html#servicios" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Semillas</a>
+            <a href="index.html#servicios" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Esquejes</a>
+            <a href="index.html#servicios" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Injertos</a>
+            <a href="index.html#servicios" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Endurecimiento</a>
+          </div>
+        </div>
+        <div class="relative group">
+          <button class="px-3 py-2 text-sm font-semibold text-pilvicsa-primary hover:text-pilvicsa-accent transition inline-flex items-center gap-1">Productos <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
+            <a href="producto-hortalizas.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Hortalizas</a>
+            <a href="productos-florescorte.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Flores de Corte</a>
+            <a href="productos-cultivoscosta.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Cultivos de Costa</a>
+            <a href="productos-frutalesforestales.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Frutales y Forestales</a>
+            <a href="productos-especies.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Especies y Aromáticas</a>
+            <a href="productos-otras.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Cultivos Especiales</a>
+          </div>
+        </div>
+        <a href="buscar.html" class="px-3 py-2 text-sm font-semibold text-pilvicsa-primary hover:text-pilvicsa-accent transition">Buscar</a>
+        <div class="relative group">
+          <button class="px-3 py-2 text-sm font-semibold text-pilvicsa-accent border-b-2 border-pilvicsa-accent inline-flex items-center gap-1">Herramientas <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
+            <a href="herramientas-planificacion.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">📋 Planificación</a>
+            <a href="herramientas-cuidado.html" class="block px-4 py-2.5 text-sm bg-pilvicsa-surface text-pilvicsa-primary font-semibold">🌿 Cuidado del Cultivo</a>
+            <a href="herramientas-conversion.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">📐 Conversión de Unidades</a>
+          </div>
+        </div>
+        <a href="localizaciones.html" class="px-3 py-2 text-sm font-semibold text-pilvicsa-primary hover:text-pilvicsa-accent transition">Contacto</a>
+      </div>
+      <a href="buscar.html" class="hidden lg:inline-flex items-center gap-2 bg-pilvicsa-accent text-pilvicsa-dark px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-pilvicsa-light hover:text-white transition">Explorar Variedades <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+      <button data-collapse-toggle="mobile-menu-cuid" type="button" class="lg:hidden p-2 rounded-lg text-pilvicsa-primary hover:bg-pilvicsa-surface transition" aria-controls="mobile-menu-cuid" aria-expanded="false">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu-cuid" class="hidden lg:hidden bg-white border-t border-gray-100 shadow-sm">
+    <div class="px-4 py-3 space-y-1">
+      <a href="index.html" class="block px-3 py-2 text-sm font-semibold text-pilvicsa-primary">Inicio</a>
+      <a href="buscar.html" class="block px-3 py-2 text-sm font-semibold text-pilvicsa-primary">Buscar</a>
+      <a href="herramientas-planificacion.html" class="block px-3 py-2 text-sm font-semibold text-pilvicsa-primary">Planificación</a>
+      <a href="herramientas-cuidado.html" class="block px-3 py-2 text-sm font-semibold text-pilvicsa-accent">Cuidado del Cultivo</a>
+      <a href="herramientas-conversion.html" class="block px-3 py-2 text-sm font-semibold text-pilvicsa-primary">Conversión de Unidades</a>
+      <a href="localizaciones.html" class="block px-3 py-2 text-sm font-semibold text-pilvicsa-primary">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="bg-pilvicsa-dark pt-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <nav class="text-xs text-white/40 mb-4" aria-label="Breadcrumb">
+      <a href="index.html" class="hover:text-white/70 transition">Inicio</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/70">Herramientas</span>
+      <span class="mx-2">/</span>
+      <span class="text-white/70">Cuidado del Cultivo</span>
+    </nav>
+    <h1 class="font-display font-black text-3xl lg:text-4xl text-white mb-2">🌿 Cuidado del Cultivo</h1>
+    <p class="text-white/50 text-sm max-w-lg">Programas de fertilización y fumigación por cultivo, y calculadora de dilución de agroquímicos.</p>
+    <div class="tool-nav-pills mt-6">
+      <a href="herramientas-planificacion.html">📋 Planificación</a>
+      <a href="herramientas-cuidado.html" class="active">🌿 Cuidado del Cultivo</a>
+      <a href="herramientas-conversion.html">📐 Conversión de Unidades</a>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="tool-wrap pt-8">
+
+  <!-- CALCULATOR 1 — FERTILIZATION & FUMIGATION -->
+  <div class="pilv-section-label"><span>Cuidado 1 — Fertilización y Fumigación</span></div>
+  <div class="pilv-calc">
+    <div class="pilv-calc-header">
+      <div class="icon">💊</div>
+      <div>
+        <h2>Calendario de Fertilización y Fumigación</h2>
+        <p>Ingresa tu cultivo y fecha de trasplante — genera un programa completo de aplicaciones</p>
+      </div>
+    </div>
+    <div class="pilv-calc-body">
+      <div class="pilv-row-2">
+        <div class="pilv-field">
+          <label>Cultivo</label>
+          <select id="ff-crop">
+            <option value="">— Seleccionar cultivo —</option>
+            <optgroup label="Hortalizas">
+              <option value="tomate">Tomate (ciclo 70–90 días)</option>
+              <option value="pimiento">Pimiento (ciclo 80–100 días)</option>
+              <option value="brocoli">Brócoli / Coliflor (75 días)</option>
+              <option value="lechuga">Lechuga (60 días)</option>
+            </optgroup>
+            <optgroup label="Flores de Corte">
+              <option value="gerbera_ff">Gerbera (ciclo 110 días)</option>
+              <option value="clavel_ff">Clavel (ciclo 90 días)</option>
+            </optgroup>
+            <optgroup label="Cultivos de Costa">
+              <option value="cacao_ff">Cacao (primer año)</option>
+              <option value="maracuya_ff">Maracuyá (primer año)</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="pilv-field">
+          <label>Fecha de trasplante</label>
+          <input type="date" id="ff-transplant">
+        </div>
+      </div>
+      <button class="pilv-btn" onclick="calcFertFumig()">💊 Generar programa</button>
+      <button class="pilv-btn-secondary" onclick="resetFF()">Limpiar</button>
+      <div id="ff-result" class="pilv-calendar-result" style="margin-top:20px;">
+        <div style="font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#a05c1a;margin-bottom:16px;" id="ff-program-title">Programa de aplicaciones</div>
+        <div id="ff-timeline"></div>
+        <div class="pilv-cal-export" style="margin-top:20px;">
+          <div class="export-title">📥 Exportar programa</div>
+          <p>Exporta todas las aplicaciones a tu calendario o descarga imagen para el celular.</p>
+          <div class="pilv-export-btns">
+            <a id="ff-ics-link" href="#" class="pilv-btn-ics" download="fertfumig-pilvicsa.ics">📅 Descargar .ics</a>
+            <button class="pilv-btn-ics" style="color:#a05c1a;border-color:#a05c1a;" onclick="downloadFFImage()">📱 Guardar imagen</button>
+          </div>
+        </div>
+        <div style="background:#fff3cd;border-left:4px solid #e6a817;border-radius:0 8px 8px 0;padding:14px 18px;margin-top:16px;font-size:.82rem;color:#7a5900;">
+          ⚠️ <strong>Nota:</strong> Este programa es orientativo. Las dosis y productos deben ajustarse con un técnico agrónomo según las condiciones de su suelo, clima y presión de plagas.
+        </div>
+        <canvas id="ff-canvas" style="display:none;"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- CALCULATOR 2 — DILUTION -->
+  <div class="pilv-section-label"><span>Cuidado 2 — Dilución de Agroquímicos</span></div>
+  <div class="pilv-calc">
+    <div class="pilv-calc-header">
+      <div class="icon">🧪</div>
+      <div>
+        <h2>Dilución de Agroquímicos</h2>
+        <p>Fungicidas, insecticidas y fertilizantes — calcula la cantidad exacta de producto</p>
+      </div>
+    </div>
+    <div class="pilv-calc-body">
+      <div class="pilv-row-2">
+        <div class="pilv-field">
+          <label>Tipo de producto</label>
+          <select id="dil-type" onchange="fillDilProduct()">
+            <option value="">— Seleccionar tipo —</option>
+            <optgroup label="Fungicidas">
+              <option value="2,cc/L,liquid">Mancozeb (2 cc/L)</option>
+              <option value="1.5,cc/L,liquid">Propineb (1.5 cc/L)</option>
+              <option value="2,cc/L,liquid">Cimoxanil (2 cc/L)</option>
+              <option value="1,cc/L,liquid">Azoxistrobina (1 cc/L)</option>
+              <option value="2,g/L,powder">Cobre hidróxido — polvo (2 g/L)</option>
+            </optgroup>
+            <optgroup label="Insecticidas">
+              <option value="0.5,cc/L,liquid">Imidacloprid (0.5 cc/L)</option>
+              <option value="1,cc/L,liquid">Clorpirifos (1 cc/L)</option>
+              <option value="1.5,cc/L,liquid">Abamectina (1.5 cc/L)</option>
+              <option value="2,cc/L,liquid">Bifentrina (2 cc/L)</option>
+              <option value="1,cc/L,liquid">Spinosad (1 cc/L)</option>
+            </optgroup>
+            <optgroup label="Fertilizantes foliares">
+              <option value="3,cc/L,liquid">Cosmocel — N:P:K líquido (3 cc/L)</option>
+              <option value="2,cc/L,liquid">Boro foliar (2 cc/L)</option>
+              <option value="2,cc/L,liquid">Calcio foliar (2 cc/L)</option>
+              <option value="5,g/L,powder">Nitrato de calcio — polvo (5 g/L)</option>
+              <option value="3,g/L,powder">Sulfato de magnesio (3 g/L)</option>
+            </optgroup>
+            <optgroup label="Personalizado">
+              <option value="custom">Ingresar dosis manualmente</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="pilv-field">
+          <label>Volumen total de agua</label>
+          <div style="display:flex;gap:8px;align-items:center;">
+            <input type="number" id="dil-volume" placeholder="ej. 200" min="1" step="1" style="flex:1;">
+            <select id="dil-volume-unit" onchange="calcDilVolumeUnit()" style="flex:0 0 auto;width:110px;padding:10px 8px;border:1.5px solid #f0dfc0;border-radius:8px;font-size:.88rem;font-family:inherit;background:#fffdf7;">
+              <option value="L" selected>Litros (L)</option>
+              <option value="gal">Galones</option>
+              <option value="cc">cc / ml</option>
+            </select>
+          </div>
+          <div class="hint" id="dil-volume-hint">Capacidad total de tu bomba o tanque · 1 galón = 3.785 L</div>
+        </div>
+      </div>
+      <div id="dil-custom-fields" style="display:none;">
+        <div class="pilv-row-3">
+          <div class="pilv-field"><label>Dosis del producto</label><input type="number" id="dil-custom-dose" placeholder="ej. 2" min="0.01" step="0.01"></div>
+          <div class="pilv-field">
+            <label>Unidad de dosis</label>
+            <select id="dil-custom-unit">
+              <option value="cc/L">cc por litro de agua</option>
+              <option value="ml/L">ml por litro de agua</option>
+              <option value="g/L">gramos por litro de agua</option>
+              <option value="cc/100L">cc por 100 litros</option>
+              <option value="g/100L">gramos por 100 litros</option>
+            </select>
+          </div>
+          <div class="pilv-field">
+            <label>Tipo de formulación</label>
+            <select id="dil-custom-type">
+              <option value="liquid">Líquido (cc / ml)</option>
+              <option value="powder">Polvo (gramos)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="pilv-field">
+        <label>¿Qué área vas a tratar?</label>
+        <div class="pilv-row-2">
+          <input type="number" id="dil-area" placeholder="ej. 0.5" min="0" step="0.01">
+          <select id="dil-area-unit">
+            <option value="ha">Hectáreas</option>
+            <option value="m2">Metros cuadrados (m²)</option>
+          </select>
+        </div>
+        <div class="hint">Opcional — para calcular número de mezclas necesarias</div>
+      </div>
+      <button class="pilv-btn" onclick="calcDilution()">🧪 Calcular dilución</button>
+      <button class="pilv-btn-secondary" onclick="resetDil()">Limpiar</button>
+      <div id="dil-result" class="pilv-result">
+        <div class="result-title">Resultado — Dilución</div>
+        <table class="pilv-dil-table" id="dil-table"></table>
+        <div class="pilv-result-note" id="dil-note"></div>
+        <button class="pilv-btn-ics" style="color:#555;border-color:#ccc;margin-top:12px;" onclick="downloadDilImage()">📱 Guardar imagen del resultado</button>
+        <canvas id="dil-img-canvas" style="display:none;"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;padding:20px 0 40px;font-size:.78rem;color:#888;line-height:1.7;">
+    Las calculadoras son herramientas de referencia. Consulte siempre con un agrónomo certificado<br>
+    antes de aplicar productos o realizar cambios en su planificación de cultivo.<br>
+    <a href="localizaciones.html" style="color:#a05c1a;font-weight:600;">Contactar a un asesor Pilvicsa →</a>
+  </div>
+
+</div><!-- /tool-wrap -->
+
+<!-- FOOTER -->
+<footer class="bg-pilvicsa-dark text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
+      <div><a href="index.html" class="flex items-center gap-3 mb-4"><img src="images/logo@2x.png" alt="Pilvicsa" class="h-10 w-auto"></a><p class="text-white/40 text-sm leading-relaxed">Germinando desde 1999.<br>Vivero y pilonera líder del Ecuador.</p></div>
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-widest text-pilvicsa-accent mb-4">Herramientas</h4>
+        <ul class="space-y-2 text-sm text-white/55">
+          <li><a href="herramientas-planificacion.html" class="hover:text-white transition">Planificación</a></li>
+          <li><a href="herramientas-cuidado.html" class="text-pilvicsa-accent/80">Cuidado del Cultivo</a></li>
+          <li><a href="herramientas-conversion.html" class="hover:text-white transition">Conversión de Unidades</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-widest text-pilvicsa-accent mb-4">Productos</h4>
+        <ul class="space-y-2 text-sm text-white/55">
+          <li><a href="producto-hortalizas.html" class="hover:text-white transition">Hortalizas</a></li>
+          <li><a href="productos-florescorte.html" class="hover:text-white transition">Flores de Corte</a></li>
+          <li><a href="productos-frutalesforestales.html" class="hover:text-white transition">Frutales y Forestales</a></li>
+          <li><a href="buscar.html" class="text-pilvicsa-accent/70 hover:text-pilvicsa-accent transition">Ver todas →</a></li>
+        </ul>
+      </div>
+      <div><h4 class="text-xs font-bold uppercase tracking-widest text-pilvicsa-accent mb-4">Contacto Rápido</h4><ul class="space-y-2.5 text-sm text-white/55 mb-5"><li><a href="tel:+593322235011" class="hover:text-white transition">032 235 011</a></li><li><a href="mailto:pilvicsaec@gmail.com" class="hover:text-white transition">pilvicsaec@gmail.com</a></li></ul><a href="https://wa.me/593997609747" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded-lg text-xs font-semibold transition">WhatsApp</a></div>
+    </div>
+    <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-white/35 text-sm">© 2025 Pilvicsa · <a href="https://pilvicsa.com.ec" class="hover:text-white/55 transition">pilvicsa.com.ec</a></p>
+      <div class="flex gap-6 text-sm text-white/35"><a href="sitemap.xml" class="hover:text-white/55 transition">Sitemap</a><a href="localizaciones.html" class="hover:text-white/55 transition">Contacto</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+<script>
+/* ── Utility ── */
+function fmt(n,dec){return Number(n).toLocaleString('es-EC',{minimumFractionDigits:dec||0,maximumFractionDigits:dec||0});}
+function addDays(date,days){var d=new Date(date);d.setDate(d.getDate()+days);return d;}
+function fmtDate(d){var days=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'],months=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];return days[d.getDay()]+', '+d.getDate()+' de '+months[d.getMonth()]+' de '+d.getFullYear();}
+function pad(n){return n<10?'0'+n:''+n;}
+function toICSDate(d){return d.getFullYear()+''+pad(d.getMonth()+1)+''+pad(d.getDate());}
+function makeICSEvent(uid,summary,date,description){var ds=toICSDate(date),de=toICSDate(new Date(date.getTime()+86400000));return['BEGIN:VEVENT','UID:'+uid+'@pilvicsa.com.ec','DTSTART;VALUE=DATE:'+ds,'DTEND;VALUE=DATE:'+de,'SUMMARY:🌱 '+summary,'DESCRIPTION:'+description,'CATEGORIES:Pilvicsa,Agricultura','BEGIN:VALARM','TRIGGER:-P1D','ACTION:DISPLAY','DESCRIPTION:Recordatorio: '+summary,'END:VALARM','END:VEVENT'].join('\r\n');}
+
+/* ── Fertilization & Fumigation ── */
+var FF_PROGRAMS={tomate:{label:'Tomate',totalDays:80,apps:[{day:0,type:'fert',icon:'🌱',label:'Enraizamiento',product:'Ácido húmico + Calcio foliar',dose:'2 cc/L',notes:'Aplicar al trasplante. Favorece el establecimiento de raíces.'},{day:7,type:'fumig',icon:'🦟',label:'Control preventivo',product:'Imidacloprid',dose:'0.5 cc/L',notes:'Prevención de mosca blanca y trips en etapa vegetativa.'},{day:14,type:'fert',icon:'💧',label:'Fertilización vegetativa',product:'N:P:K 20-20-20',dose:'3 g/L',notes:'Alto nitrógeno para crecimiento foliar activo.'},{day:21,type:'fumig',icon:'🍄',label:'Prevención fungal',product:'Cobre hidróxido',dose:'2 g/L',notes:'Aplicar preventivo contra tizón tardío y alternaria.'},{day:28,type:'fert',icon:'💧',label:'Fertilización pre-floración',product:'Boro foliar + Cosmocel',dose:'2 cc/L + 3 cc/L',notes:'Boro mejora la cuaja floral. Aplicar cuando aparezcan los primeros botones.'},{day:35,type:'fumig',icon:'🦟',label:'Control de ácaros',product:'Abamectina',dose:'1.5 cc/L',notes:'Monitorear presencia de araña roja. Rotar modo de acción.'},{day:42,type:'fert',icon:'💧',label:'Llenado de fruto',product:'N:P:K 10-10-30 + Calcio',dose:'3 g/L + 2 cc/L',notes:'Alto potasio para calidad y tamaño de fruto. Calcio previene pudrición apical.'},{day:56,type:'fumig',icon:'🍄',label:'Control de botritis',product:'Iprodione o Procimidone',dose:'2 cc/L',notes:'Aplicar si hay presencia de botritis en flores o frutos.'},{day:70,type:'fert',icon:'✨',label:'Maduración',product:'K foliar + Aminoácidos',dose:'3 cc/L',notes:'Potasio foliar para color y brix. Suspender 10 días antes de cosecha.'}]},pimiento:{label:'Pimiento',totalDays:90,apps:[{day:0,type:'fert',icon:'🌱',label:'Enraizamiento',product:'Ácido húmico + Zinc foliar',dose:'2 cc/L',notes:'Al trasplante. El zinc favorece el desarrollo inicial.'},{day:10,type:'fumig',icon:'🦟',label:'Control insectos',product:'Imidacloprid',dose:'0.5 cc/L',notes:'Trips y mosca blanca en etapa inicial son los principales problemas.'},{day:20,type:'fert',icon:'💧',label:'Vegetativo',product:'N:P:K 20-20-20',dose:'3 g/L',notes:'Fase de crecimiento vegetativo activo.'},{day:30,type:'fumig',icon:'🍄',label:'Prevención fungal',product:'Propineb o Mancozeb',dose:'2 cc/L',notes:'Preventivo contra phytophthora y botrytis.'},{day:40,type:'fert',icon:'💧',label:'Pre-floración',product:'Boro + N:P:K',dose:'2+3 cc/L',notes:'Boro crítico para la cuaja. Aplicar al inicio de botones.'},{day:55,type:'fert',icon:'💧',label:'Llenado fruto',product:'N:P:K 10-10-30',dose:'3 g/L',notes:'Fase de engrose de fruto.'},{day:70,type:'fumig',icon:'🦟',label:'Control final',product:'Spinosad',dose:'1 cc/L',notes:'Control de gusanos si hay presencia. Período de carencia: 7 días.'},{day:80,type:'fert',icon:'✨',label:'Maduración',product:'K foliar',dose:'3 cc/L',notes:'Potasio para color y calidad final del pimiento.'}]},brocoli:{label:'Brócoli/Coliflor',totalDays:75,apps:[{day:0,type:'fert',icon:'🌱',label:'Trasplante',product:'Ácido húmico + N foliar',dose:'2 cc/L + 1 cc/L',notes:'Establecimiento. Aplicar al suelo y foliar.'},{day:10,type:'fumig',icon:'🦟',label:'Control gusanos',product:'Bacillus thuringiensis (Bt)',dose:'2 g/L',notes:'Control biológico de Plutella y gusano del brócoli. Seguro y efectivo.'},{day:20,type:'fert',icon:'💧',label:'Vegetativo',product:'N:P:K 20-20-20 + Magnesio',dose:'3 g/L + 2 cc/L',notes:'Nitrógeno y magnesio para color verde intenso.'},{day:30,type:'fumig',icon:'🍄',label:'Control fungal',product:'Cobre + Dimetomorf',dose:'2 g/L + 1 cc/L',notes:'Prevención de mildiu y alternaria en el follaje.'},{day:40,type:'fert',icon:'💧',label:'Formación pella',product:'Calcio + Boro + K',dose:'2+1+2 cc/L',notes:'Calcio y boro son críticos para la compactación y calidad de la pella.'},{day:60,type:'fert',icon:'✨',label:'Pre-cosecha',product:'K foliar',dose:'3 cc/L',notes:'Potasio para firmeza. Suspender 7 días antes de cosecha.'}]},lechuga:{label:'Lechuga',totalDays:60,apps:[{day:0,type:'fert',icon:'🌱',label:'Trasplante',product:'Ácido húmico',dose:'2 cc/L',notes:'Enraizamiento. Aplicar regado al suelo.'},{day:10,type:'fert',icon:'💧',label:'Vegetativo',product:'N foliar (Urea foliar)',dose:'2 g/L',notes:'Nitrógeno para rápido crecimiento foliar.'},{day:20,type:'fumig',icon:'🦟',label:'Control de trips',product:'Spinosad',dose:'0.8 cc/L',notes:'Trips puede dañar seriamente la lechuga. Aplicar tarde.'},{day:35,type:'fert',icon:'💧',label:'Engrose',product:'Calcio foliar + K',dose:'2+2 cc/L',notes:'Prevención de tip burn (bordes quemados) en etapa de cogollo.'},{day:50,type:'fert',icon:'✨',label:'Pre-cosecha',product:'Sin aplicaciones',dose:'—',notes:'No aplicar agroquímicos 10 días antes de cosecha.'}]},gerbera_ff:{label:'Gerbera',totalDays:110,apps:[{day:0,type:'fert',icon:'🌱',label:'Trasplante',product:'Enraizador + Ácido húmico',dose:'2 cc/L',notes:'Aplicar al hoyo de siembra.'},{day:14,type:'fert',icon:'💧',label:'Vegetativo',product:'N:P:K 20-20-20',dose:'2 g/L',notes:'Etapa vegetativa de desarrollo foliar.'},{day:21,type:'fumig',icon:'🦟',label:'Control ácaros',product:'Abamectina',dose:'1.5 cc/L',notes:'Araña roja es el principal problema en gerbera. Monitorear.'},{day:35,type:'fert',icon:'💧',label:'Pre-floración',product:'N:P:K 15-15-30 + Boro',dose:'2 g/L + 1 cc/L',notes:'Alto potasio y boro para botones florales.'},{day:50,type:'fumig',icon:'🍄',label:'Control Botrytis',product:'Iprodione',dose:'2 cc/L',notes:'Botrytis en pétalos y corona es frecuente en gerbera.'},{day:70,type:'fert',icon:'💧',label:'Mantenimiento',product:'Calcio + K',dose:'2+3 cc/L',notes:'Para tallos firmes y flores de calidad exportable.'},{day:90,type:'fumig',icon:'🦟',label:'Control mosca blanca',product:'Imidacloprid',dose:'0.5 cc/L',notes:'Rotar modo de acción para evitar resistencia.'}]},clavel_ff:{label:'Clavel',totalDays:90,apps:[{day:0,type:'fert',icon:'🌱',label:'Trasplante',product:'Ácido húmico + Fósforo',dose:'2+2 cc/L',notes:'Alto fósforo para desarrollo radicular inicial.'},{day:14,type:'fert',icon:'💧',label:'Vegetativo',product:'N:P:K 20-20-20',dose:'2 g/L',notes:'Crecimiento vegetativo.'},{day:25,type:'fumig',icon:'🦟',label:'Control Fusarium',product:'Thiabendazole drench',dose:'2 cc/L',notes:'Aplicar al suelo. Fusarium es el principal problema del clavel.'},{day:40,type:'fert',icon:'💧',label:'Pre-floración',product:'N:P:K 12-6-36 + Boro',dose:'2 g/L + 1 cc/L',notes:'Alto potasio para apertura y calidad floral.'},{day:60,type:'fumig',icon:'🍄',label:'Control fungal',product:'Procimidone',dose:'2 cc/L',notes:'Prevención Alternaria y Botrytis en pétalos.'},{day:75,type:'fert',icon:'✨',label:'Cosecha',product:'K + Calcio',dose:'3+2 cc/L',notes:'Para tallos rígidos y mayor vida poscosecha.'}]},cacao_ff:{label:'Cacao (primer año)',totalDays:365,apps:[{day:0,type:'fert',icon:'🌱',label:'Siembra/Trasplante',product:'15-15-15 suelo + Ácido húmico',dose:'50 g/planta + 2 cc/L',notes:'Aplicar en corona. Mezclar con suelo.'},{day:30,type:'fumig',icon:'🦟',label:'Control de monalonion',product:'Cipermetrina',dose:'1 cc/L',notes:'Barrenador del tronco en plantines jóvenes.'},{day:60,type:'fert',icon:'💧',label:'Fertilización 1',product:'Urea + Sulfato de potasio',dose:'30 g/planta + 20 g/planta',notes:'En corona a 30 cm del tronco.'},{day:90,type:'fumig',icon:'🍄',label:'Control Phytophthora',product:'Metalaxil + Cobre',dose:'2+2 g/L',notes:'Monilia y escoba de bruja son las principales enfermedades.'},{day:120,type:'fert',icon:'💧',label:'Fertilización 2',product:'N:P:K 15-15-15',dose:'50 g/planta',notes:'Segunda aplicación al suelo.'},{day:180,type:'fumig',icon:'🍄',label:'Control fungal',product:'Cobre hidróxido',dose:'3 g/L',notes:'Aplicación preventiva inicio de lluvia.'},{day:240,type:'fert',icon:'💧',label:'Fertilización 3',product:'Sulfato de potasio + Magnesio',dose:'30+15 g/planta',notes:'Potasio y magnesio para vigor foliar.'},{day:300,type:'fumig',icon:'🦟',label:'Control integral',product:'Insecticida sistémico',dose:'1 cc/L',notes:'Control preventivo final del año.'}]},maracuya_ff:{label:'Maracuyá (primer año)',totalDays:365,apps:[{day:0,type:'fert',icon:'🌱',label:'Siembra',product:'Superfosfato triple + Ácido húmico',dose:'100 g/hoyo + 2 cc/L',notes:'Aplicar en el fondo del hoyo de siembra.'},{day:20,type:'fert',icon:'💧',label:'Vegetativo',product:'Urea foliar',dose:'2 g/L',notes:'Estimular crecimiento vegetativo inicial.'},{day:45,type:'fumig',icon:'🦟',label:'Control trips',product:'Spinosad',dose:'1 cc/L',notes:'Trips transmite virosis. Control muy importante.'},{day:60,type:'fert',icon:'💧',label:'Fertilización suelo',product:'15-15-15',dose:'80 g/planta',notes:'En corona a 40 cm del tallo.'},{day:90,type:'fumig',icon:'🍄',label:'Control fungal',product:'Cobre + Mancozeb',dose:'2+2 g/L',notes:'Antracnosis y fusarium en tallo y hojas.'},{day:120,type:'fert',icon:'💧',label:'Pre-floración',product:'N:P:K 10-30-20 + Boro',dose:'2 g/L + 1 cc/L',notes:'Alto fósforo y boro para floración.'},{day:180,type:'fert',icon:'💧',label:'Llenado fruto',product:'N:P:K 12-6-36 + Calcio',dose:'2 g/L + 2 cc/L',notes:'Potasio para calidad y brix.'},{day:240,type:'fumig',icon:'🦟',label:'Control mosca fruto',product:'Clorpirifos + Proteína hidrolizada',dose:'1 cc/L',notes:'Trampa + insecticida. La mosca de la fruta es crítica.'}]}};
+
+function calcFertFumig(){var cropKey=document.getElementById('ff-crop').value,transpStr=document.getElementById('ff-transplant').value;if(!cropKey){alert('Por favor selecciona un cultivo.');return;}if(!transpStr){alert('Por favor ingresa la fecha de trasplante.');return;}var prog=FF_PROGRAMS[cropKey],transpDate=new Date(transpStr+'T12:00:00'),timeline=document.getElementById('ff-timeline'),title=document.getElementById('ff-program-title');title.textContent='Programa de aplicaciones — '+prog.label;var icsEvents=[],ts=Date.now(),html='';prog.apps.forEach(function(app,i){var appDate=addDays(transpDate,app.day),isFert=app.type==='fert',borderCol=isFert?'#2c6e3f':'#e67e22',bgCol=isFert?'#f4f9f5':'#fff8f0',typeLabel=isFert?'Fertilización':'Fumigación';html+='<div style="background:'+bgCol+';border-left:4px solid '+borderCol+';border-radius:0 8px 8px 0;padding:14px 16px;margin-bottom:12px;"><div style="font-size:.65rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:'+borderCol+';margin-bottom:4px;">Día '+app.day+' — '+typeLabel+'</div><div style="font-size:1rem;font-weight:700;color:#1a1a1a;margin-bottom:2px;">'+app.icon+' '+app.label+' — '+fmtDate(appDate)+'</div><div style="font-size:.82rem;color:#555;margin-bottom:4px;"><strong>Producto:</strong> '+app.product+' <span style="color:#888;">('+app.dose+')</span></div><div style="font-size:.78rem;color:#777;">'+app.notes+'</div></div>';icsEvents.push(makeICSEvent('ff-'+i+'-'+ts,app.icon+' '+prog.label+': '+app.label,appDate,'Producto: '+app.product+'\nDosis: '+app.dose+'\n'+app.notes+'\nPilvicsa — 032 235 011'));});timeline.innerHTML=html;document.getElementById('ff-result').classList.add('show');var ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Pilvicsa//FertFumig//ES','CALSCALE:GREGORIAN','X-WR-CALNAME:Pilvicsa — '+prog.label+' Fertilización/Fumigación'].join('\r\n')+'\r\n'+icsEvents.join('\r\n')+'\r\nEND:VCALENDAR';document.getElementById('ff-ics-link').href=URL.createObjectURL(new Blob([ics],{type:'text/calendar;charset=utf-8'}));window._ffProg={prog:prog,transpDate:transpDate};}
+function downloadFFImage(){if(!window._ffProg){alert('Genera el programa primero.');return;}var prog=window._ffProg.prog,transpDate=window._ffProg.transpDate,W=540,rowH=68,headerH=110,padB=50,H=headerH+prog.apps.length*rowH+padB,canvas=document.getElementById('ff-canvas');canvas.width=W;canvas.height=H;var ctx=canvas.getContext('2d');ctx.fillStyle='#fffdf8';ctx.fillRect(0,0,W,H);ctx.fillStyle='#1a4a28';ctx.fillRect(0,0,W,headerH);ctx.fillStyle='#fff';ctx.font='bold 19px sans-serif';ctx.textAlign='center';ctx.fillText('Pilvicsa — Programa Fertilización/Fumigación',W/2,36);ctx.font='14px sans-serif';ctx.fillStyle='rgba(255,255,255,0.85)';ctx.fillText(prog.label+' · Trasplante: '+fmtDate(transpDate),W/2,62);ctx.font='11px sans-serif';ctx.fillStyle='rgba(255,255,255,0.55)';ctx.fillText('pilvicsa.com.ec · Tel: 032 235 011',W/2,98);prog.apps.forEach(function(app,i){var y=headerH+i*rowH,isFert=app.type==='fert',appDate=addDays(transpDate,app.day),borderCol=isFert?'#2c6e3f':'#e67e22';ctx.fillStyle=i%2===0?'#fff':'#fafafa';ctx.fillRect(0,y,W,rowH);ctx.fillStyle=borderCol;ctx.fillRect(0,y,5,rowH);ctx.fillStyle='#1a1a1a';ctx.font='bold 13px sans-serif';ctx.textAlign='left';ctx.fillText(app.icon+' Día '+app.day+' — '+app.label,16,y+20);ctx.font='12px sans-serif';ctx.fillStyle='#555';ctx.fillText(fmtDate(appDate),16,y+37);ctx.fillStyle=borderCol;ctx.font='bold 12px sans-serif';ctx.fillText(app.product+' · '+app.dose,16,y+54);});ctx.fillStyle='#bbb';ctx.font='11px sans-serif';ctx.textAlign='center';ctx.fillText('Generado por Pilvicsa · '+new Date().toLocaleDateString('es-EC'),W/2,H-16);var link=document.createElement('a');link.download='fertfumig-'+prog.label.toLowerCase().replace(/\s+/g,'-')+'.png';link.href=canvas.toDataURL('image/png');link.click();}
+function resetFF(){document.getElementById('ff-crop').selectedIndex=0;document.getElementById('ff-transplant').value='';document.getElementById('ff-result').classList.remove('show');window._ffProg=null;}
+
+/* ── Dilution calculator ── */
+var DIL_VOLUME_IN_L=1;
+function calcDilVolumeUnit(){var unit=document.getElementById('dil-volume-unit').value,hints={'L':'Capacidad total de tu bomba o tanque · 1 galón = 3.785 L','gal':'1 galón = 3.785 L · bomba de 4 gal = 15.1 L · bomba de 5 gal = 18.9 L','cc':'1 cc = 1 ml = 0.001 L · para mezclas pequeñas de laboratorio'},mults={'L':1,'gal':3.78541,'cc':0.001},pl={'L':'ej. 200','gal':'ej. 5','cc':'ej. 500'};DIL_VOLUME_IN_L=mults[unit]||1;var hint=document.getElementById('dil-volume-hint');if(hint)hint.textContent=hints[unit]||'';document.getElementById('dil-volume').placeholder=pl[unit]||'ej. 200';}
+function fillDilProduct(){var val=document.getElementById('dil-type').value;document.getElementById('dil-custom-fields').style.display=val==='custom'?'block':'none';}
+function calcDilution(){var typeVal=document.getElementById('dil-type').value,rawVol=parseFloat(document.getElementById('dil-volume').value),volume=rawVol*(typeof DIL_VOLUME_IN_L!=='undefined'?DIL_VOLUME_IN_L:1),areaVal=parseFloat(document.getElementById('dil-area').value)||0,areaUnit=document.getElementById('dil-area-unit').value;if(!typeVal){alert('Por favor selecciona un tipo de producto.');return;}if(!volume){alert('Por favor ingresa el volumen de agua.');return;}var dose,unit,formulation;if(typeVal==='custom'){dose=parseFloat(document.getElementById('dil-custom-dose').value);unit=document.getElementById('dil-custom-unit').value;formulation=document.getElementById('dil-custom-type').value;if(!dose){alert('Por favor ingresa la dosis del producto.');return;}}else{var parts=typeVal.split(',');dose=parseFloat(parts[0]);unit=parts[1];formulation=parts[2];}var dosePerLiter=dose;if(unit==='cc/100L'||unit==='g/100L')dosePerLiter=dose/100;var totalProduct=dosePerLiter*volume,unitLabel=formulation==='liquid'?'cc (ml)':'gramos',unitShort=formulation==='liquid'?'cc':'g',coverageHa=volume/200,coverageM2=coverageHa*10000,mixesNeeded='';if(areaVal>0){var areaHa=areaUnit==='ha'?areaVal:areaVal/10000,totalVol=areaHa*200,mixes=Math.ceil(totalVol/volume),totalProd=dosePerLiter*totalVol;mixesNeeded='<tr><td>Área a tratar</td><td><strong>'+fmt(areaVal)+' '+areaUnit+'</strong></td></tr><tr><td>Volumen total necesario</td><td><strong>'+fmt(totalVol)+' litros</strong></td></tr><tr><td>Mezclas necesarias</td><td><strong>'+mixes+' mezcla'+(mixes>1?'s':'')+'</strong> de '+fmt(volume)+' L</td></tr><tr><td>Producto total requerido</td><td><strong>'+fmt(totalProd,1)+' '+unitShort+'</strong></td></tr>';}document.getElementById('dil-table').innerHTML='<thead><tr><th>Parámetro</th><th>Resultado</th></tr></thead><tbody><tr><td>Volumen de mezcla</td><td><strong>'+fmt(volume)+' litros</strong></td></tr><tr><td>Dosis aplicada</td><td><strong>'+dose+' '+unit+'</strong></td></tr><tr><td>Producto a agregar</td><td><strong>'+fmt(totalProduct,1)+' '+unitLabel+'</strong></td></tr><tr><td>Cobertura estimada (campo)</td><td><strong>'+fmt(coverageHa,2)+' ha</strong> ('+fmt(coverageM2)+' m²) a 200 L/ha</td></tr>'+mixesNeeded+'</tbody>';document.getElementById('dil-note').innerHTML='⚠️ Siempre use equipo de protección (guantes, mascarilla y gafas) al preparar agroquímicos. La cobertura estimada asume aplicación estándar de 200 L/ha. Ajuste según el equipo de aspersión y tipo de cultivo. <a href="localizaciones.html" style="color:#a05c1a;">Consulte con su asesor Pilvicsa.</a>';document.getElementById('dil-result').classList.add('show');}
+function resetDil(){document.getElementById('dil-type').selectedIndex=0;document.getElementById('dil-volume').value='';document.getElementById('dil-area').value='';document.getElementById('dil-custom-fields').style.display='none';document.getElementById('dil-result').classList.remove('show');}
+function downloadDilImage(){var table=document.getElementById('dil-table');if(!table||!table.innerHTML){alert('Calcula la dilución primero.');return;}var rows_el=table.querySelectorAll('tbody tr'),W=540,rowH=44,headerH=100,tableHeaderH=36,padB=50,H=headerH+tableHeaderH+rows_el.length*rowH+padB,canvas=document.getElementById('dil-img-canvas');canvas.width=W;canvas.height=H;var ctx=canvas.getContext('2d');ctx.fillStyle='#fffdf8';ctx.fillRect(0,0,W,H);ctx.fillStyle='#1a4a28';ctx.fillRect(0,0,W,headerH);ctx.fillStyle='#fff';ctx.font='bold 19px sans-serif';ctx.textAlign='center';ctx.fillText('Pilvicsa — Dilución de Agroquímico',W/2,36);var prod=document.getElementById('dil-type'),vol=document.getElementById('dil-volume').value,prodLabel=prod.options[prod.selectedIndex].text.split('(')[0].trim();ctx.font='13px sans-serif';ctx.fillStyle='rgba(255,255,255,0.85)';ctx.fillText(prodLabel+' · '+vol+' litros',W/2,60);ctx.font='11px sans-serif';ctx.fillStyle='rgba(255,255,255,0.55)';ctx.fillText('pilvicsa.com.ec · Tel: 032 235 011',W/2,88);var y=headerH;ctx.fillStyle='#a05c1a';ctx.fillRect(0,y,W,tableHeaderH);ctx.fillStyle='#fff';ctx.font='bold 12px sans-serif';ctx.textAlign='left';ctx.fillText('  Parámetro',16,y+23);ctx.textAlign='right';ctx.fillText('Resultado  ',W-16,y+23);y+=tableHeaderH;rows_el.forEach(function(row,i){ctx.fillStyle=i%2===0?'#fff':'#fafafa';ctx.fillRect(0,y,W,rowH);var cells=row.querySelectorAll('td');ctx.fillStyle='#555';ctx.font='13px sans-serif';ctx.textAlign='left';if(cells[0])ctx.fillText(cells[0].textContent,16,y+27);ctx.fillStyle='#7a4410';ctx.font='bold 14px sans-serif';ctx.textAlign='right';if(cells[1])ctx.fillText(cells[1].textContent.replace(/\s+/g,' ').trim().substring(0,40),W-16,y+27);y+=rowH;});ctx.fillStyle='#bbb';ctx.font='11px sans-serif';ctx.textAlign='center';ctx.fillText('⚠ Usar siempre equipo de protección · Generado por Pilvicsa · '+new Date().toLocaleDateString('es-EC'),W/2,H-16);var link=document.createElement('a');link.download='dilusion-pilvicsa.png';link.href=canvas.toDataURL('image/png');link.click();}
+</script>
+</body>
+</html>
