@@ -264,8 +264,12 @@ function cardHTML(p) {
 }
 
 fetch('data/products.json')
-  .then(r => r.json())
+  .then(r => {
+    if (!r.ok) throw new Error('HTTP ' + r.status + ' — ' + r.url);
+    return r.json();
+  })
   .then(data => {
+    console.log('[Pilvicsa] Loaded', data.length, 'products from local JSON');
     PILV_DB = data;
     const filtered = PILV_DB.filter(p => p.pagina === PAGE_CAT);
     document.getElementById('page-count').textContent = `${filtered.length} variedad${filtered.length !== 1 ? 'es' : ''}`;
@@ -277,9 +281,10 @@ fetch('data/products.json')
       grid.innerHTML = filtered.map(cardHTML).join('');
     }
   })
-  .catch(() => {
+  .catch(err => {
+    console.error('[Pilvicsa]', err.message);
     document.getElementById('product-grid').innerHTML =
-      '<div class="col-span-full text-center py-16 text-gray-400 text-sm">No se pudo cargar el catálogo.</div>';
+      `<div class="col-span-full text-center py-16 text-red-400 text-sm font-mono px-4">${err.message}<br><br>Abre el sitio via XAMPP: <strong>http://localhost/pilvicsa.v2/</strong></div>`;
   });
 
 function openModal(id) {

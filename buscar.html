@@ -376,19 +376,36 @@ function initWithData(data) {
   render();
 }
 
+function showLoadError(msg) {
+  console.error('[Pilvicsa]', msg);
+  document.getElementById('product-grid').innerHTML =
+    `<div class="col-span-full text-center py-16 text-red-400 text-sm font-mono px-4">${msg}<br><br>Abre el sitio via XAMPP: <strong>http://localhost/pilvicsa.v2/buscar.html</strong></div>`;
+}
+
 // Try Google Sheet first; fall back to local products.json
 fetch(SHEET_URL)
-  .then(r => { if (!r.ok) throw new Error('sheet'); return r.text(); })
-  .then(text => initWithData(csvToProducts(text)))
-  .catch(() =>
+  .then(r => { if (!r.ok) throw new Error('Sheet HTTP ' + r.status); return r.text(); })
+  .then(text => {
+    const data = csvToProducts(text);
+    console.log('[Pilvicsa] Loaded', data.length, 'products from Google Sheet');
+    if (!data.length) throw new Error('Sheet returned 0 products');
+    initWithData(data);
+  })
+  .catch(sheetErr => {
+    console.warn('[Pilvicsa] Sheet fetch failed:', sheetErr.message, '— trying local JSON');
     fetch('data/products.json')
-      .then(r => r.json())
-      .then(data => initWithData(data))
-      .catch(() => {
-        document.getElementById('product-grid').innerHTML =
-          '<div class="col-span-full text-center py-16 text-gray-400 text-sm">No se pudo cargar el catálogo.</div>';
+      .then(r => {
+        if (!r.ok) throw new Error('JSON HTTP ' + r.status);
+        return r.json();
       })
-  );
+      .then(data => {
+        console.log('[Pilvicsa] Loaded', data.length, 'products from local JSON');
+        initWithData(data);
+      })
+      .catch(jsonErr => {
+        showLoadError('Error: ' + sheetErr.message + ' | ' + jsonErr.message);
+      });
+  });
 
 // ── Render ───────────────────────────────────────────────────────────────────
 function getResults() {
