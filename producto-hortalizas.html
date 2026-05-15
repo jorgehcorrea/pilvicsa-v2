@@ -241,8 +241,9 @@ function esc(s) {
 
 function cardHTML(p) {
   const meta = CAT_META[p.pagina] || { label: p.pageLabel || p.pagina, cls: 'bg-gray-100 text-gray-700' };
-  const imgHtml = p.imagen
-    ? `<img src="images/productos/${esc(p.imagen)}" alt="${esc(p.nombre)}" loading="lazy" class="w-full h-full object-cover" onerror="pilvImgErr(this)">`
+  const imgSrc = p.imagen ? (p.imagen.startsWith('http') || p.imagen.startsWith('images/') ? p.imagen : 'images/productos/' + p.imagen) : '';
+  const imgHtml = imgSrc
+    ? `<img src="${esc(imgSrc)}" alt="${esc(p.nombre)}" loading="lazy" class="w-full h-full object-cover" onerror="pilvImgErr(this)">`
     : PLACEHOLDER_SVG;
   const specs = SPEC_FIELDS.filter(f => p[f.key]).slice(0, 3)
     .map(f => `<span class="text-xs text-gray-500"><span class="font-medium text-gray-700">${f.label}:</span> ${esc(p[f.key])}</span>`)
