@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flores de Corte | Pilvicsa — Vivero y Pilonera Ecuador</title>
-  <meta name="description" content="26 variedades de flores de corte: gerberas, claveles, limonium, statice, helichrysum y más. Propagación certificada para floricultura comercial en Ecuador.">
-  <link rel="canonical" href="https://pilvicsa.com.ec/productos-florescorte.html">
+  <title>Hortalizas | Pilvicsa — Vivero y Pilonera Ecuador</title>
+  <meta name="description" content="Tomates, pimientos, lechugas, brócoli y más — variedades de alto rendimiento para invernadero y campo abierto. Pilvicsa, vivero líder del Ecuador.">
+  <link rel="canonical" href="https://pilvicsa.com.ec/producto-hortalizas.html">
   <link rel="icon" href="images/pilvicsa.ico" type="image/x-icon">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Pilvicsa">
-  <meta property="og:title" content="Flores de Corte | Pilvicsa">
-  <meta property="og:description" content="Claveles, gypsophila y flores especiales para exportación.">
-  <meta property="og:image" content="https://pilvicsa.com.ec/images/pages/florescorte.jpg">
-  <meta property="og:url" content="https://pilvicsa.com.ec/productos-florescorte.html">
+  <meta property="og:title" content="Hortalizas | Pilvicsa">
+  <meta property="og:description" content="Tomates, pimientos, lechugas, brócoli — variedades de alto rendimiento.">
+  <meta property="og:image" content="https://pilvicsa.com.ec/images/pages/hortalizas.jpg">
+  <meta property="og:url" content="https://pilvicsa.com.ec/producto-hortalizas.html">
   <meta property="og:locale" content="es_EC">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Flores de Corte | Pilvicsa">
-  <meta name="twitter:description" content="Claveles, gypsophila y flores especiales para exportación.">
-  <meta name="twitter:image" content="https://pilvicsa.com.ec/images/pages/florescorte.jpg">
+  <meta name="twitter:title" content="Hortalizas | Pilvicsa">
+  <meta name="twitter:description" content="Tomates, pimientos, lechugas, brócoli — variedades de alto rendimiento.">
+  <meta name="twitter:image" content="https://pilvicsa.com.ec/images/pages/hortalizas.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Syne:wght@700;800&display=swap" rel="stylesheet">
@@ -57,8 +57,8 @@
         <div class="relative group">
           <button class="px-3 py-2 text-sm font-semibold text-pilvicsa-accent border-b-2 border-pilvicsa-accent inline-flex items-center gap-1">Productos <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></button>
           <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
-            <a href="producto-hortalizas.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Hortalizas</a>
-            <a href="productos-florescorte.html" class="block px-4 py-2.5 text-sm font-semibold text-pilvicsa-primary bg-pilvicsa-surface transition">Flores de Corte</a>
+            <a href="producto-hortalizas.html" class="block px-4 py-2.5 text-sm font-semibold text-pilvicsa-primary bg-pilvicsa-surface transition">Hortalizas</a>
+            <a href="productos-florescorte.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Flores de Corte</a>
             <a href="productos-cultivoscosta.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Cultivos de Costa</a>
             <a href="productos-frutalesforestales.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Frutales y Forestales</a>
             <a href="productos-especies.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Especies y Aromáticas</a>
@@ -88,7 +88,7 @@
     <div class="px-4 py-3 space-y-1">
       <a href="index.html" class="block px-3 py-2 text-sm font-semibold text-pilvicsa-primary">Inicio</a>
       <a href="buscar.html" class="block px-3 py-2 text-sm font-semibold text-pilvicsa-primary">Buscar</a>
-      <a href="productos-florescorte.html" class="block px-3 py-2 text-sm font-semibold text-pilvicsa-accent">Flores de Corte</a>
+      <a href="producto-hortalizas.html" class="block px-3 py-2 text-sm font-semibold text-pilvicsa-accent">Hortalizas</a>
       <a href="localizaciones.html" class="block px-3 py-2 text-sm font-semibold text-pilvicsa-primary">Contacto</a>
     </div>
   </div>
@@ -96,16 +96,16 @@
 
 <!-- PAGE HERO -->
 <div class="relative pt-16 h-64 sm:h-80 overflow-hidden bg-pilvicsa-dark">
-  <img src="images/pages/florescorte.jpg" alt="Flores de Corte" class="absolute inset-0 w-full h-full object-cover opacity-40" loading="eager">
+  <img src="images/pages/hortalizas.jpg" alt="Hortalizas" class="absolute inset-0 w-full h-full object-cover opacity-40" loading="eager">
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-end pb-10">
     <nav class="text-xs text-white/40 mb-3" aria-label="Breadcrumb">
       <a href="index.html" class="hover:text-white/70 transition">Inicio</a>
       <span class="mx-2">/</span>
       <a href="buscar.html" class="hover:text-white/70 transition">Productos</a>
       <span class="mx-2">/</span>
-      <span class="text-white/70">Flores de Corte</span>
+      <span class="text-white/70">Hortalizas</span>
     </nav>
-    <h1 class="font-display font-black text-4xl lg:text-5xl text-white mb-1">Flores de Corte</h1>
+    <h1 class="font-display font-black text-4xl lg:text-5xl text-white mb-1">Hortalizas</h1>
     <p class="text-white/50 text-sm" id="page-count">Cargando...</p>
   </div>
 </div>
@@ -113,7 +113,7 @@
 <!-- INTRO -->
 <div class="bg-white border-b border-gray-100">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <p class="text-gray-600 text-base max-w-3xl leading-relaxed">Claveles, gypsophila y flores especiales cultivadas bajo estándares de exportación — variedades de alto valor para mercado nacional e internacional, producidas en condiciones controladas de invernadero.</p>
+    <p class="text-gray-600 text-base max-w-3xl leading-relaxed">Tomates, pimientos, lechugas, brócoli y decenas de variedades más — seleccionadas para alto rendimiento en invernadero y campo abierto en las condiciones agroclimáticas del Ecuador.</p>
   </div>
 </div>
 
@@ -132,8 +132,8 @@
 <div class="bg-pilvicsa-surface border-t border-gray-200 py-10">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
     <p class="text-gray-600 text-sm">¿Buscas algo específico? Usa el buscador para encontrar cualquier variedad.</p>
-    <a href="buscar.html?cat=florescorte" class="inline-flex items-center gap-2 bg-pilvicsa-primary text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-pilvicsa-mid transition">
-      Buscar en Flores de Corte <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+    <a href="buscar.html?cat=hortalizas" class="inline-flex items-center gap-2 bg-pilvicsa-primary text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-pilvicsa-mid transition">
+      Buscar en Hortalizas <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
     </a>
   </div>
 </div>
@@ -149,8 +149,8 @@
       <div>
         <h4 class="text-xs font-bold uppercase tracking-widest text-pilvicsa-accent mb-4">Productos</h4>
         <ul class="space-y-2 text-sm text-white/55">
-          <li><a href="producto-hortalizas.html" class="hover:text-white transition">Hortalizas</a></li>
-          <li><a href="productos-florescorte.html" class="text-white hover:text-pilvicsa-accent transition">Flores de Corte</a></li>
+          <li><a href="producto-hortalizas.html" class="text-white hover:text-pilvicsa-accent transition">Hortalizas</a></li>
+          <li><a href="productos-florescorte.html" class="hover:text-white transition">Flores de Corte</a></li>
           <li><a href="productos-cultivoscosta.html" class="hover:text-white transition">Cultivos de Costa</a></li>
           <li><a href="productos-frutalesforestales.html" class="hover:text-white transition">Frutales y Forestales</a></li>
           <li><a href="productos-especies.html" class="hover:text-white transition">Especies y Aromáticas</a></li>
@@ -211,7 +211,7 @@
 <!-- SCRIPTS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 <script>
-const PAGE_CAT = 'florescorte';
+const PAGE_CAT = 'hortalizas';
 const CAT_META = {
   hortalizas:        { label: 'Hortalizas',          cls: 'bg-green-100 text-green-800' },
   florescorte:       { label: 'Flores de Corte',      cls: 'bg-rose-100 text-rose-800' },
@@ -232,16 +232,39 @@ const SPEC_FIELDS = [
 const PLACEHOLDER_SVG = `<div class="w-full h-full bg-pilvicsa-surface flex items-center justify-center"><svg class="w-10 h-10 text-pilvicsa-light opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></div>`;
 function pilvImgErr(el){el.parentElement.innerHTML=PLACEHOLDER_SVG;}
 
+
 let PILV_DB = [];
-function esc(s) { return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+function esc(s) {
+  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
 function cardHTML(p) {
   const meta = CAT_META[p.pagina] || { label: p.pageLabel || p.pagina, cls: 'bg-gray-100 text-gray-700' };
-  const imgSrc = p.imagen ? (p.imagen.startsWith('http') || p.imagen.startsWith('images/') ? p.imagen : 'images/productos/' + p.imagen) : '';
-  const imgHtml = imgSrc ? `<img src="${esc(imgSrc)}" alt="${esc(p.nombre)}" loading="lazy" class="w-full h-full object-cover" onerror="pilvImgErr(this)">` : PLACEHOLDER_SVG;
-  const specs = SPEC_FIELDS.filter(f => p[f.key]).slice(0, 3).map(f => `<span class="text-xs text-gray-500"><span class="font-medium text-gray-700">${f.label}:</span> ${esc(p[f.key])}</span>`).join(' · ');
-  const confirmedBadge = p.estado === 'confirmed' ? `<span class="inline-block text-xs bg-pilvicsa-accent/20 text-pilvicsa-primary font-semibold px-2 py-0.5 rounded-full">✓ Confirmado</span>` : '';
-  return `<div class="product-card bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md overflow-hidden cursor-pointer" onclick="openModal('${esc(p.id)}')"><div class="h-44 overflow-hidden bg-pilvicsa-surface relative">${imgHtml}</div><div class="p-4"><div class="flex flex-wrap items-center gap-1.5 mb-2"><span class="text-xs font-semibold px-2 py-0.5 rounded-full ${meta.cls}">${meta.label}</span>${confirmedBadge}</div><h3 class="font-semibold text-gray-900 leading-snug mb-0.5">${esc(p.nombre)}</h3>${p.latin ? `<p class="text-xs text-gray-400 italic mb-2">${esc(p.latin)}</p>` : '<div class="mb-2"></div>'}${specs ? `<p class="text-xs leading-relaxed text-gray-500 mb-3">${specs}</p>` : '<div class="mb-3"></div>'}<button class="w-full text-center text-xs font-semibold text-pilvicsa-mid hover:text-white hover:bg-pilvicsa-mid border border-pilvicsa-light rounded-lg py-2 transition">Ver ficha completa</button></div></div>`;
+  const imgHtml = p.imagen
+    ? `<img src="images/productos/${esc(p.imagen)}" alt="${esc(p.nombre)}" loading="lazy" class="w-full h-full object-cover" onerror="pilvImgErr(this)">`
+    : PLACEHOLDER_SVG;
+  const specs = SPEC_FIELDS.filter(f => p[f.key]).slice(0, 3)
+    .map(f => `<span class="text-xs text-gray-500"><span class="font-medium text-gray-700">${f.label}:</span> ${esc(p[f.key])}</span>`)
+    .join(' · ');
+  const confirmedBadge = p.estado === 'confirmed'
+    ? `<span class="inline-block text-xs bg-pilvicsa-accent/20 text-pilvicsa-primary font-semibold px-2 py-0.5 rounded-full">✓ Confirmado</span>` : '';
+  return `
+<div class="product-card bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md overflow-hidden cursor-pointer" onclick="openModal('${esc(p.id)}')">
+  <div class="h-44 overflow-hidden bg-pilvicsa-surface relative">${imgHtml}</div>
+  <div class="p-4">
+    <div class="flex flex-wrap items-center gap-1.5 mb-2">
+      <span class="text-xs font-semibold px-2 py-0.5 rounded-full ${meta.cls}">${meta.label}</span>
+      ${confirmedBadge}
+    </div>
+    <h3 class="font-semibold text-gray-900 leading-snug mb-0.5">${esc(p.nombre)}</h3>
+    ${p.latin ? `<p class="text-xs text-gray-400 italic mb-2">${esc(p.latin)}</p>` : '<div class="mb-2"></div>'}
+    ${specs ? `<p class="text-xs leading-relaxed text-gray-500 mb-3">${specs}</p>` : '<div class="mb-3"></div>'}
+    <button class="w-full text-center text-xs font-semibold text-pilvicsa-mid hover:text-white hover:bg-pilvicsa-mid border border-pilvicsa-light rounded-lg py-2 transition">Ver ficha completa</button>
+  </div>
+</div>`;
 }
+
 fetch('data/products.json')
   .then(r => {
     if (!r.ok) throw new Error('HTTP ' + r.status + ' — ' + r.url);
@@ -253,43 +276,79 @@ fetch('data/products.json')
     const filtered = PILV_DB.filter(p => p.pagina === PAGE_CAT);
     document.getElementById('page-count').textContent = `${filtered.length} variedad${filtered.length !== 1 ? 'es' : ''}`;
     const grid = document.getElementById('product-grid');
-    if (filtered.length === 0) { grid.innerHTML = ''; document.getElementById('no-results').classList.remove('hidden'); }
-    else { grid.innerHTML = filtered.map(cardHTML).join(''); }
+    if (filtered.length === 0) {
+      grid.innerHTML = '';
+      document.getElementById('no-results').classList.remove('hidden');
+    } else {
+      grid.innerHTML = filtered.map(cardHTML).join('');
+    }
   })
   .catch(err => {
     console.error('[Pilvicsa]', err.message);
     document.getElementById('product-grid').innerHTML =
       `<div class="col-span-full text-center py-16 text-red-400 text-sm font-mono px-4">${err.message}<br><br>Abre el sitio via XAMPP: <strong>http://localhost/pilvicsa.v2/</strong></div>`;
   });
+
 function openModal(id) {
-  const p = PILV_DB.find(x => x.id === id); if (!p) return;
+  const p = PILV_DB.find(x => x.id === id);
+  if (!p) return;
   const meta = CAT_META[p.pagina] || { label: p.pageLabel || p.pagina, cls: 'bg-gray-100 text-gray-700' };
   document.getElementById('modal-badges').innerHTML = `<span class="text-xs font-semibold px-2 py-0.5 rounded-full ${meta.cls}">${meta.label}</span>${p.estado === 'confirmed' ? '<span class="text-xs bg-pilvicsa-accent/20 text-pilvicsa-primary font-semibold px-2 py-0.5 rounded-full">✓ Confirmado</span>' : ''}`;
   document.getElementById('modal-nombre').textContent = p.nombre;
-  const latinEl = document.getElementById('modal-latin'); latinEl.textContent = p.latin || ''; latinEl.style.display = p.latin ? '' : 'none';
-  const hasVideos = p.youtube_id || p.fb_video_id; const hasSocial = !!p.ig_post_id;
+  const latinEl = document.getElementById('modal-latin');
+  latinEl.textContent = p.latin || '';
+  latinEl.style.display = p.latin ? '' : 'none';
+
+  const hasVideos = p.youtube_id || p.fb_video_id;
+  const hasSocial = !!p.ig_post_id;
   const tabs = [{ id: 'specs', label: 'Especificaciones' }];
-  if (hasVideos) tabs.push({ id: 'videos', label: 'Videos' }); if (hasSocial) tabs.push({ id: 'social', label: 'Redes Sociales' });
-  document.getElementById('modal-tabs').innerHTML = tabs.map((t, i) => `<button class="modal-tab-btn ${i === 0 ? 'active' : ''} px-4 py-3 text-sm font-semibold border-b-2 ${i === 0 ? 'border-pilvicsa-primary text-pilvicsa-primary' : 'border-transparent text-gray-400 hover:text-gray-700'} transition" onclick="switchModalTab('${t.id}', this)">${t.label}</button>`).join('');
-  const specsRows = SPEC_FIELDS.filter(f => p[f.key]).map(f => `<tr class="border-b border-gray-50"><td class="py-2.5 pr-4 text-xs font-semibold text-gray-500 uppercase tracking-wider w-32 align-top">${f.label}</td><td class="py-2.5 text-sm text-gray-900 font-mono">${esc(p[f.key])}</td></tr>`).join('');
+  if (hasVideos) tabs.push({ id: 'videos', label: 'Videos' });
+  if (hasSocial) tabs.push({ id: 'social', label: 'Redes Sociales' });
+  document.getElementById('modal-tabs').innerHTML = tabs.map((t, i) =>
+    `<button class="modal-tab-btn ${i === 0 ? 'active' : ''} px-4 py-3 text-sm font-semibold border-b-2 ${i === 0 ? 'border-pilvicsa-primary text-pilvicsa-primary' : 'border-transparent text-gray-400 hover:text-gray-700'} transition" onclick="switchModalTab('${t.id}', this)">${t.label}</button>`
+  ).join('');
+
+  const specsRows = SPEC_FIELDS.filter(f => p[f.key]).map(f =>
+    `<tr class="border-b border-gray-50"><td class="py-2.5 pr-4 text-xs font-semibold text-gray-500 uppercase tracking-wider w-32 align-top">${f.label}</td><td class="py-2.5 text-sm text-gray-900 font-mono">${esc(p[f.key])}</td></tr>`
+  ).join('');
   const notaBlock = p.nota ? `<div class="mt-4 p-4 bg-pilvicsa-surface rounded-xl border-l-4 border-pilvicsa-mid"><p class="text-xs font-bold text-pilvicsa-primary uppercase tracking-wider mb-1">Nota</p><p class="text-sm text-gray-700">${esc(p.nota)}</p></div>` : '';
   const videosPanel = hasVideos ? `<div class="space-y-5">${p.youtube_id ? `<div><p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">YouTube</p><div class="relative aspect-video rounded-xl overflow-hidden bg-black"><iframe src="https://www.youtube.com/embed/${esc(p.youtube_id)}" title="${esc(p.nombre)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" class="absolute inset-0 w-full h-full"></iframe></div></div>` : ''}${p.fb_video_id ? `<div><p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Facebook</p><div class="relative aspect-video rounded-xl overflow-hidden bg-gray-100"><iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/piloneslavictoria/videos/${esc(p.fb_video_id)}/" loading="lazy" class="absolute inset-0 w-full h-full" allowfullscreen scrolling="no" allow="autoplay;clipboard-write;encrypted-media;picture-in-picture;web-share"></iframe></div></div>` : ''}</div>` : '';
   const socialPanel = hasSocial ? `<div class="flex justify-center"><iframe src="https://www.instagram.com/p/${esc(p.ig_post_id)}/embed/" loading="lazy" class="w-full max-w-sm rounded-xl" height="480" frameborder="0" scrolling="no" allowtransparency="true"></iframe></div>` : '';
-  document.getElementById('modal-body').innerHTML = `<div id="panel-specs" class="modal-tab-panel active">${specsRows ? `<table class="w-full">${specsRows}</table>` : '<p class="text-sm text-gray-400">Sin especificaciones disponibles.</p>'}${notaBlock}</div>${hasVideos ? `<div id="panel-videos" class="modal-tab-panel">${videosPanel}</div>` : ''}${hasSocial ? `<div id="panel-social" class="modal-tab-panel">${socialPanel}</div>` : ''}`;
+
+  document.getElementById('modal-body').innerHTML = `
+    <div id="panel-specs" class="modal-tab-panel active">${specsRows ? `<table class="w-full">${specsRows}</table>` : '<p class="text-sm text-gray-400">Sin especificaciones disponibles.</p>'}${notaBlock}</div>
+    ${hasVideos ? `<div id="panel-videos" class="modal-tab-panel">${videosPanel}</div>` : ''}
+    ${hasSocial ? `<div id="panel-social" class="modal-tab-panel">${socialPanel}</div>` : ''}
+  `;
   document.getElementById('modal-backdrop').classList.remove('hidden');
-  setTimeout(() => { document.getElementById('modal-backdrop').style.opacity = '1'; document.getElementById('product-modal').style.opacity = '1'; document.getElementById('product-modal').style.pointerEvents = 'auto'; }, 10);
+  setTimeout(() => {
+    document.getElementById('modal-backdrop').style.opacity = '1';
+    document.getElementById('product-modal').style.opacity = '1';
+    document.getElementById('product-modal').style.pointerEvents = 'auto';
+  }, 10);
   document.body.style.overflow = 'hidden';
 }
+
 function closeModal() {
-  document.getElementById('modal-backdrop').style.opacity = '0'; document.getElementById('product-modal').style.opacity = '0'; document.getElementById('product-modal').style.pointerEvents = 'none';
-  setTimeout(() => document.getElementById('modal-backdrop').classList.add('hidden'), 200); document.body.style.overflow = '';
+  document.getElementById('modal-backdrop').style.opacity = '0';
+  document.getElementById('product-modal').style.opacity = '0';
+  document.getElementById('product-modal').style.pointerEvents = 'none';
+  setTimeout(() => document.getElementById('modal-backdrop').classList.add('hidden'), 200);
+  document.body.style.overflow = '';
 }
+
 function switchModalTab(panelId, btn) {
-  document.querySelectorAll('.modal-tab-btn').forEach(b => { b.classList.remove('active','text-pilvicsa-primary','border-pilvicsa-primary'); b.classList.add('text-gray-400','border-transparent'); });
-  btn.classList.add('active','text-pilvicsa-primary','border-pilvicsa-primary'); btn.classList.remove('text-gray-400','border-transparent');
+  document.querySelectorAll('.modal-tab-btn').forEach(b => {
+    b.classList.remove('active', 'text-pilvicsa-primary', 'border-pilvicsa-primary');
+    b.classList.add('text-gray-400', 'border-transparent');
+  });
+  btn.classList.add('active', 'text-pilvicsa-primary', 'border-pilvicsa-primary');
+  btn.classList.remove('text-gray-400', 'border-transparent');
   document.querySelectorAll('.modal-tab-panel').forEach(p => p.classList.remove('active'));
-  const panel = document.getElementById('panel-' + panelId); if (panel) panel.classList.add('active');
+  const panel = document.getElementById('panel-' + panelId);
+  if (panel) panel.classList.add('active');
 }
+
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 </script>
 </body>

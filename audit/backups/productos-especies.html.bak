@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cultivos de Costa | Pilvicsa — Vivero y Pilonera Ecuador</title>
-  <meta name="description" content="12 variedades de cultivos tropicales y de costa: cacao CCN-51, maracuyá, papaya, pitahaya y más. Plántulas injertadas y certificadas para la región costera del Ecuador.">
-  <link rel="canonical" href="https://pilvicsa.com.ec/productos-cultivoscosta.html">
+  <title>Especies y Aromáticas | Pilvicsa — Vivero y Pilonera Ecuador</title>
+  <meta name="description" content="Albahaca, orégano y hierbas aromáticas de alta pureza — ideales para gastronomía gourmet, exportación y mercado orgánico. Pilvicsa, vivero del Ecuador.">
+  <link rel="canonical" href="https://pilvicsa.com.ec/productos-especies.html">
   <link rel="icon" href="images/pilvicsa.ico" type="image/x-icon">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Pilvicsa">
-  <meta property="og:title" content="Cultivos de Costa | Pilvicsa">
-  <meta property="og:description" content="Sandías, melones y cucurbitáceas adaptadas a la costa ecuatoriana.">
-  <meta property="og:image" content="https://pilvicsa.com.ec/images/pages/cultivoscosta.jpg">
-  <meta property="og:url" content="https://pilvicsa.com.ec/productos-cultivoscosta.html">
+  <meta property="og:title" content="Especies y Aromáticas | Pilvicsa">
+  <meta property="og:description" content="Albahaca, orégano y hierbas aromáticas para gastronomía y exportación.">
+  <meta property="og:image" content="https://pilvicsa.com.ec/images/pages/especies.jpg">
+  <meta property="og:url" content="https://pilvicsa.com.ec/productos-especies.html">
   <meta property="og:locale" content="es_EC">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Cultivos de Costa | Pilvicsa">
-  <meta name="twitter:description" content="Sandías, melones y cucurbitáceas adaptadas a la costa ecuatoriana.">
-  <meta name="twitter:image" content="https://pilvicsa.com.ec/images/pages/cultivoscosta.jpg">
+  <meta name="twitter:title" content="Especies y Aromáticas | Pilvicsa">
+  <meta name="twitter:description" content="Albahaca, orégano y hierbas aromáticas para gastronomía y exportación.">
+  <meta name="twitter:image" content="https://pilvicsa.com.ec/images/pages/especies.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Syne:wght@700;800&display=swap" rel="stylesheet">
@@ -57,9 +57,9 @@
           <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-1">
             <a href="producto-hortalizas.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Hortalizas</a>
             <a href="productos-florescorte.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Flores de Corte</a>
-            <a href="productos-cultivoscosta.html" class="block px-4 py-2.5 text-sm font-semibold text-pilvicsa-primary bg-pilvicsa-surface transition">Cultivos de Costa</a>
+            <a href="productos-cultivoscosta.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Cultivos de Costa</a>
             <a href="productos-frutalesforestales.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Frutales y Forestales</a>
-            <a href="productos-especies.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Especies y Aromáticas</a>
+            <a href="productos-especies.html" class="block px-4 py-2.5 text-sm font-semibold text-pilvicsa-primary bg-pilvicsa-surface transition">Especies y Aromáticas</a>
             <a href="productos-otras.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-pilvicsa-surface hover:text-pilvicsa-primary transition">Cultivos Especiales</a>
           </div>
         </div>
@@ -82,7 +82,7 @@
     <div class="px-4 py-3 space-y-1">
       <a href="index.html" class="block px-3 py-2 text-sm font-semibold text-pilvicsa-primary">Inicio</a>
       <a href="buscar.html" class="block px-3 py-2 text-sm font-semibold text-pilvicsa-primary">Buscar</a>
-      <a href="productos-cultivoscosta.html" class="block px-3 py-2 text-sm font-semibold text-pilvicsa-accent">Cultivos de Costa</a>
+      <a href="productos-especies.html" class="block px-3 py-2 text-sm font-semibold text-pilvicsa-accent">Especies y Aromáticas</a>
       <a href="localizaciones.html" class="block px-3 py-2 text-sm font-semibold text-pilvicsa-primary">Contacto</a>
     </div>
   </div>
@@ -90,14 +90,14 @@
 
 <!-- PAGE HERO -->
 <div class="relative pt-16 h-64 sm:h-80 overflow-hidden bg-pilvicsa-dark">
-  <img src="images/pages/cultivoscosta.jpg" alt="Cultivos de Costa" class="absolute inset-0 w-full h-full object-cover opacity-40" loading="eager">
+  <img src="images/pages/especies.jpg" alt="Especies y Aromáticas" class="absolute inset-0 w-full h-full object-cover opacity-40" loading="eager">
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-end pb-10">
     <nav class="text-xs text-white/40 mb-3" aria-label="Breadcrumb">
       <a href="index.html" class="hover:text-white/70 transition">Inicio</a><span class="mx-2">/</span>
       <a href="buscar.html" class="hover:text-white/70 transition">Productos</a><span class="mx-2">/</span>
-      <span class="text-white/70">Cultivos de Costa</span>
+      <span class="text-white/70">Especies y Aromáticas</span>
     </nav>
-    <h1 class="font-display font-black text-4xl lg:text-5xl text-white mb-1">Cultivos de Costa</h1>
+    <h1 class="font-display font-black text-4xl lg:text-5xl text-white mb-1">Especies y Aromáticas</h1>
     <p class="text-white/50 text-sm" id="page-count">Cargando...</p>
   </div>
 </div>
@@ -105,7 +105,7 @@
 <!-- INTRO -->
 <div class="bg-white border-b border-gray-100">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <p class="text-gray-600 text-base max-w-3xl leading-relaxed">Sandías, melones y cucurbitáceas tropicales adaptadas a las condiciones cálidas y húmedas de la costa ecuatoriana — variedades de alto rendimiento para campo abierto.</p>
+    <p class="text-gray-600 text-base max-w-3xl leading-relaxed">Hierbas aromáticas y medicinales de alta pureza — albahaca, orégano y más, ideales para gastronomía gourmet, exportación y el creciente mercado orgánico ecuatoriano.</p>
   </div>
 </div>
 
@@ -124,7 +124,7 @@
 <div class="bg-pilvicsa-surface border-t border-gray-200 py-10">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
     <p class="text-gray-600 text-sm">¿Buscas algo específico? Usa el buscador para encontrar cualquier variedad.</p>
-    <a href="buscar.html?cat=cultivoscosta" class="inline-flex items-center gap-2 bg-pilvicsa-primary text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-pilvicsa-mid transition">Buscar en Cultivos de Costa <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></a>
+    <a href="buscar.html?cat=especies" class="inline-flex items-center gap-2 bg-pilvicsa-primary text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-pilvicsa-mid transition">Buscar en Especies <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></a>
   </div>
 </div>
 
@@ -138,9 +138,9 @@
         <ul class="space-y-2 text-sm text-white/55">
           <li><a href="producto-hortalizas.html" class="hover:text-white transition">Hortalizas</a></li>
           <li><a href="productos-florescorte.html" class="hover:text-white transition">Flores de Corte</a></li>
-          <li><a href="productos-cultivoscosta.html" class="text-white hover:text-pilvicsa-accent transition">Cultivos de Costa</a></li>
+          <li><a href="productos-cultivoscosta.html" class="hover:text-white transition">Cultivos de Costa</a></li>
           <li><a href="productos-frutalesforestales.html" class="hover:text-white transition">Frutales y Forestales</a></li>
-          <li><a href="productos-especies.html" class="hover:text-white transition">Especies y Aromáticas</a></li>
+          <li><a href="productos-especies.html" class="text-white hover:text-pilvicsa-accent transition">Especies y Aromáticas</a></li>
           <li><a href="buscar.html" class="text-pilvicsa-accent/70 hover:text-pilvicsa-accent transition">Ver todas →</a></li>
         </ul>
       </div>
@@ -167,7 +167,7 @@
 <!-- SCRIPTS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 <script>
-const PAGE_CAT = 'cultivoscosta';
+const PAGE_CAT = 'especies';
 const CAT_META = { hortalizas:{label:'Hortalizas',cls:'bg-green-100 text-green-800'}, florescorte:{label:'Flores de Corte',cls:'bg-rose-100 text-rose-800'}, cultivoscosta:{label:'Cultivos de Costa',cls:'bg-amber-100 text-amber-800'}, frutalesforestales:{label:'Frutales y Forestales',cls:'bg-orange-100 text-orange-800'}, especies:{label:'Especies',cls:'bg-teal-100 text-teal-800'}, otras:{label:'Cultivos Especiales',cls:'bg-purple-100 text-purple-800'} };
 const SPEC_FIELDS = [{key:'ciclo',label:'Ciclo'},{key:'sistema',label:'Sistema'},{key:'color',label:'Color'},{key:'forma',label:'Forma'},{key:'tamano',label:'Tamaño'},{key:'densidad',label:'Densidad'},{key:'resistencias',label:'Resistencias'}];
 const PLACEHOLDER_SVG = `<div class="w-full h-full bg-pilvicsa-surface flex items-center justify-center"><svg class="w-10 h-10 text-pilvicsa-light opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></div>`;
@@ -175,7 +175,7 @@ function pilvImgErr(el){el.parentElement.innerHTML=PLACEHOLDER_SVG;}
 
 let PILV_DB = [];
 function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
-function cardHTML(p){const meta=CAT_META[p.pagina]||{label:p.pageLabel||p.pagina,cls:'bg-gray-100 text-gray-700'};const imgSrc=p.imagen?(p.imagen.startsWith('http')||p.imagen.startsWith('images/')?p.imagen:'images/productos/'+p.imagen):'';const imgHtml=imgSrc?`<img src="${esc(imgSrc)}" alt="${esc(p.nombre)}" loading="lazy" class="w-full h-full object-cover" onerror="pilvImgErr(this)"> `:PLACEHOLDER_SVG;const specs=SPEC_FIELDS.filter(f=>p[f.key]).slice(0,3).map(f=>`<span class="text-xs text-gray-500"><span class="font-medium text-gray-700">${f.label}:</span> ${esc(p[f.key])}</span>`).join(' · ');const cb=p.estado==='confirmed'?`<span class="inline-block text-xs bg-pilvicsa-accent/20 text-pilvicsa-primary font-semibold px-2 py-0.5 rounded-full">✓ Confirmado</span>`:'';return `<div class="product-card bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md overflow-hidden cursor-pointer" onclick="openModal('${esc(p.id)}')"><div class="h-44 overflow-hidden bg-pilvicsa-surface relative">${imgHtml}</div><div class="p-4"><div class="flex flex-wrap items-center gap-1.5 mb-2"><span class="text-xs font-semibold px-2 py-0.5 rounded-full ${meta.cls}">${meta.label}</span>${cb}</div><h3 class="font-semibold text-gray-900 leading-snug mb-0.5">${esc(p.nombre)}</h3>${p.latin?`<p class="text-xs text-gray-400 italic mb-2">${esc(p.latin)}</p>`:'<div class="mb-2"></div>'}${specs?`<p class="text-xs leading-relaxed text-gray-500 mb-3">${specs}</p>`:'<div class="mb-3"></div>'}<button class="w-full text-center text-xs font-semibold text-pilvicsa-mid hover:text-white hover:bg-pilvicsa-mid border border-pilvicsa-light rounded-lg py-2 transition">Ver ficha completa</button></div></div>`;}
+function cardHTML(p){const meta=CAT_META[p.pagina]||{label:p.pageLabel||p.pagina,cls:'bg-gray-100 text-gray-700'};const imgHtml=p.imagen?`<img src="images/productos/${esc(p.imagen)}" alt="${esc(p.nombre)}" loading="lazy" class="w-full h-full object-cover" onerror="pilvImgErr(this)"> `:PLACEHOLDER_SVG;const specs=SPEC_FIELDS.filter(f=>p[f.key]).slice(0,3).map(f=>`<span class="text-xs text-gray-500"><span class="font-medium text-gray-700">${f.label}:</span> ${esc(p[f.key])}</span>`).join(' · ');const cb=p.estado==='confirmed'?`<span class="inline-block text-xs bg-pilvicsa-accent/20 text-pilvicsa-primary font-semibold px-2 py-0.5 rounded-full">✓ Confirmado</span>`:'';return `<div class="product-card bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md overflow-hidden cursor-pointer" onclick="openModal('${esc(p.id)}')"><div class="h-44 overflow-hidden bg-pilvicsa-surface relative">${imgHtml}</div><div class="p-4"><div class="flex flex-wrap items-center gap-1.5 mb-2"><span class="text-xs font-semibold px-2 py-0.5 rounded-full ${meta.cls}">${meta.label}</span>${cb}</div><h3 class="font-semibold text-gray-900 leading-snug mb-0.5">${esc(p.nombre)}</h3>${p.latin?`<p class="text-xs text-gray-400 italic mb-2">${esc(p.latin)}</p>`:'<div class="mb-2"></div>'}${specs?`<p class="text-xs leading-relaxed text-gray-500 mb-3">${specs}</p>`:'<div class="mb-3"></div>'}<button class="w-full text-center text-xs font-semibold text-pilvicsa-mid hover:text-white hover:bg-pilvicsa-mid border border-pilvicsa-light rounded-lg py-2 transition">Ver ficha completa</button></div></div>`;}
 fetch('data/products.json')
   .then(r => {
     if (!r.ok) throw new Error('HTTP ' + r.status + ' — ' + r.url);

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Conversión de Unidades | Herramientas Pilvicsa</title>
-  <meta name="description" content="Conversión de unidades agrícolas: área, peso, volumen y longitud. Referencia rápida descargable para el celular. Pilvicsa.">
+  <meta name="description" content="Convierte unidades agrícolas: área, peso, volumen y longitud. Descarga como imagen para el celular. Pilvicsa.">
   <link rel="canonical" href="https://pilvicsa.com.ec/herramientas-conversion.html">
   <link rel="icon" href="images/pilvicsa.ico" type="image/x-icon">
   <meta property="og:type" content="website">
@@ -120,7 +120,7 @@
       <span class="text-white/70">Conversión de Unidades</span>
     </nav>
     <h1 class="font-display font-black text-3xl lg:text-4xl text-white mb-2">📐 Conversión de Unidades</h1>
-    <p class="text-white/50 text-sm max-w-lg">Área, peso, volumen y longitud — unidades del campo al laboratorio. Descarga como imagen para el celular.</p>
+    <p class="text-white/50 text-sm max-w-lg">Área, peso, volumen y longitud — convierte unidades del campo al laboratorio y descarga como imagen.</p>
     <div class="tool-nav-pills mt-6">
       <a href="herramientas-planificacion.html">📋 Planificación</a>
       <a href="herramientas-cuidado.html">🌿 Cuidado del Cultivo</a>

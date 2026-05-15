@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Planificación de Siembra | Herramientas Pilvicsa</title>
-  <meta name="description" content="Herramientas de planificación agrícola Pilvicsa: calendario de trasplante, rotación de cultivos y densidad de siembra por hectárea.">
+  <meta name="description" content="Calendario de trasplante, rotación de cultivos y densidad de siembra por hectárea. Herramientas agrícolas Pilvicsa.">
   <link rel="canonical" href="https://pilvicsa.com.ec/herramientas-planificacion.html">
   <link rel="icon" href="images/pilvicsa.ico" type="image/x-icon">
   <meta property="og:type" content="website">
@@ -172,7 +172,7 @@
       <div class="icon">📅</div>
       <div>
         <h2>Calendario de Trasplante desde Cosecha</h2>
-        <p>Ingresa tu fecha objetivo de cosecha y calcula cuándo debes solicitar las plántulas</p>
+        <p>Ingresa tu fecha objetivo de cosecha y calcula cuándo solicitar las plántulas</p>
       </div>
     </div>
     <div class="pilv-calc-body">
@@ -239,7 +239,7 @@
         </div>
         <div class="pilv-cal-export" id="cal-export-block" style="display:none;">
           <div class="export-title">📥 Agregar a tu Calendario</div>
-          <p>Descarga el archivo .ics para importar todas las fechas clave directamente a Google Calendar, Apple Calendar, Outlook o cualquier app de calendario en tu teléfono.</p>
+          <p>Descarga el archivo .ics para importar todas las fechas clave directamente a Google Calendar, Apple Calendar, Outlook o cualquier app de calendario.</p>
           <div class="pilv-export-btns">
             <a id="cal-ics-link" href="#" class="pilv-btn-ics" download="calendario-pilvicsa.ics">📅 Descargar archivo .ics</a>
             <a id="cal-google-link" href="#" target="_blank" rel="noopener noreferrer" class="pilv-btn-ics" style="color:#2c6e3f;border-color:#2c6e3f;">🗓 Abrir en Google Calendar</a>
@@ -258,7 +258,7 @@
       <div class="icon">🔄</div>
       <div>
         <h2>Calendario de Rotación de Cultivos</h2>
-        <p>Selecciona el cultivo que acabas de plantar — recibe sugerencias de rotación y exporta el calendario</p>
+        <p>Selecciona el cultivo actual — recibe sugerencias de rotación y exporta el calendario</p>
       </div>
     </div>
     <div class="pilv-calc-body">
